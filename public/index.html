@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Farzana Trading — Building Materials, Pallets, Cables & Scraps</title>
+  <meta name="description" content="Farzana Trading — Supplier of pallets, cables, building materials and scrap services in Bahrain. Professional, light glossy design with animations." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f7fbff;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#1A73E8; /* royal blue */
+      --glass: rgba(255,255,255,0.65);
+      --glow: 0 10px 30px rgba(26,115,232,0.12);
+      --radius:16px;
+      color-scheme: light;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#f7fbff 0%, #eef6ff 60%);}
+    a{color:inherit;text-decoration:none}
+
+    /* Navbar */
+    .nav{backdrop-filter: blur(8px);background:linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.55));border-radius:12px;padding:12px 18px;display:flex;align-items:center;gap:18px;position:sticky;top:18px;margin:18px;box-shadow:var(--glow)}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#4aa3ff);color:#fff;font-weight:700;font-size:18px;box-shadow:0 6px 20px rgba(26,115,232,0.18);}
+    .brand h1{font-size:18px;margin:0}
+    .brand p{margin:0;color:var(--muted);font-size:12px}
+    .navlinks{margin-left:auto;display:flex;gap:14px;align-items:center}
+    .navlinks a{padding:8px 12px;border-radius:10px;font-weight:600;color:#0f172a;display:inline-flex;align-items:center;gap:8px}
+    .navlinks a:hover{transform:translateY(-3px);transition:all .22s}
+    .cta{background:linear-gradient(90deg,var(--accent),#3aa0ff);color:#fff;padding:10px 14px;border-radius:12px;box-shadow:0 8px 30px rgba(26,115,232,0.18)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 480px;gap:32px;align-items:center;padding:48px 18px;max-width:1200px;margin:18px auto}
+    .hero-card{background:var(--card);padding:28px;border-radius:18px;box-shadow:var(--glow);backdrop-filter:blur(6px)}
+    .hero h2{margin:0 0 8px;font-size:32px;line-height:1.05}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .search{display:flex;gap:10px}
+    .search input{flex:1;padding:12px 14px;border-radius:12px;border:1px solid #e6eef9;background:transparent}
+    .search button{padding:12px 16px;border-radius:12px;border:none;background:linear-gradient(90deg,var(--accent),#3aa0ff);color:white;font-weight:700}
+
+    /* Animated icons row */
+    .icons{display:flex;gap:12px;margin-top:18px}
+    .icon-card{display:flex;gap:12px;align-items:center;padding:10px 12px;border-radius:12px;background:linear-gradient(180deg, rgba(250,250,255,0.9), rgba(245,249,255,0.7));box-shadow:0 4px 18px rgba(12,44,80,0.04)}
+    .icon{width:48px;height:48px;border-radius:10px;display:grid;place-items:center;background:rgba(250,250,255,0.6);animation:float 4s ease-in-out infinite}
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+
+    /* Products & filters */
+    .section{max-width:1200px;margin:26px auto;padding:18px}
+    .section h3{margin:0 0 12px}
+    .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+    .filter{padding:8px 12px;border-radius:10px;background:var(--glass);border:1px solid rgba(26,115,232,0.06);cursor:pointer}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .card{background:linear-gradient(180deg,var(--card),#fbfeff);padding:14px;border-radius:14px;border:1px solid rgba(16,24,40,0.03);box-shadow:0 6px 18px rgba(12,44,80,0.04);transition:transform .18s,box-shadow .18s}
+    .card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(16,115,255,0.08)}
+    .card img{width:100%;height:160px;object-fit:cover;border-radius:10px}
+    .card h4{margin:10px 0 4px}
+    .meta{display:flex;justify-content:space-between;color:var(--muted);font-size:13px}
+
+    /* Clients */
+    .clients{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+    .client{display:flex;gap:10px;align-items:center;padding:10px 12px;border-radius:12px;background:#fff;border:1px solid rgba(16,24,40,0.03)}
+
+    /* About */
+    .about{display:grid;grid-template-columns:1fr 380px;gap:18px}
+    .glass{background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.7));padding:18px;border-radius:14px;box-shadow:var(--glow)}
+
+    /* Contact */
+    .contact{display:grid;grid-template-columns:1fr 420px;gap:18px}
+    .contact form{display:flex;flex-direction:column;gap:10px}
+    input[type=text],input[type=email],textarea{padding:10px;border-radius:10px;border:1px solid #e6eef9}
+    button[type=submit]{padding:12px;border-radius:12px;border:none;background:linear-gradient(90deg,var(--accent),#3aa0ff);color:#fff;font-weight:700}
+
+    /* Footer */
+    footer{margin-top:28px;padding:28px 18px;background:linear-gradient(180deg,#fbfdff,#eef7ff);}
+    .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+
+    /* Responsive */
+    @media (max-width:1000px){.hero{grid-template-columns:1fr 360px}.grid{grid-template-columns:repeat(2,1fr)}.about{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+    }
+    @media (max-width:640px){.nav{margin:12px;padding:10px}.hero{grid-template-columns:1fr;gap:12px;padding:18px}
+      .grid{grid-template-columns:1fr}
+      .navlinks{display:none}
+      .hamburger{display:block;margin-left:auto}
+    }
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .pill{padding:6px 10px;border-radius:999px;background:rgba(26,115,232,0.08);font-weight:600;color:var(--accent)}
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <div class="brand">
+      <div class="logo">FT</div>
+      <div>
+        <h1>Farzana Trading</h1>
+        <p>Building Materials · Pallets · Cables · Scrap Solutions</p>
+      </div>
+    </div>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#clients">Clients</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="cta">Contact Us</a>
+    </nav>
+    <button class="hamburger" aria-label="menu" style="display:none" onclick="toggleMobileMenu()">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+
+  <main id="home">
+    <section class="hero" style="max-width:1200px">
+      <div class="hero-card">
+        <h2>Trusted supplier of building materials & industrial supplies in Bahrain</h2>
+        <p>Farzana Trading provides high-quality pallets, cables, building materials and scrap handling services — fast delivery, competitive pricing and dedicated account support.</p>
+        <div class="search">
+          <input id="searchInput" placeholder="Search products, sizes or item codes..." />
+          <button onclick="performSearch()">Search</button>
+        </div>
+        <div class="icons">
+          <div class="icon-card">
+            <div class="icon" title="Pallets">
+              <!-- animated pallet svg -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="20" height="3" rx="1" fill="#1A73E8" opacity="0.95"/><rect x="2" y="12" width="20" height="3" rx="1" fill="#4aa3ff" opacity="0.95"/></svg>
+            </div>
+            <div>
+              <div style="font-weight:700">Pallets</div>
+              <div class="muted" style="font-size:13px">Multiple sizes & quantities</div>
+            </div>
+          </div>
+
+          <div class="icon-card">
+            <div class="icon" title="Cables">
+              <!-- animated cable -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 12c2-6 12-6 16 0" stroke="#1A73E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div style="font-weight:700">Cables</div>
+              <div class="muted" style="font-size:13px">All mm sizes, single/multi-core</div>
+            </div>
+          </div>
+
+          <div class="icon-card">
+            <div class="icon" title="Scrap Services">
+              <!-- scrap -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2v6" stroke="#1A73E8" stroke-width="2" stroke-linecap="round"/><path d="M5 12h14" stroke="#4aa3ff" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div style="font-weight:700">Scrap</div>
+              <div class="muted" style="font-size:13px">Buy & sell — collection available</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="display:flex;gap:10px;margin-top:18px;align-items:center">
+          <a class="pill" href="#products">Explore Products</a>
+          <a href="#contact" style="color:var(--accent);font-weight:700">Request a Quote →</a>
+        </div>
+      </div>
+
+      <aside style="display:flex;flex-direction:column;gap:14px">
+        <div class="glass">
+          <h4 style="margin:0">Quick Stats</h4>
+          <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+            <div style="min-width:120px;padding:12px;border-radius:12px;background:#fff;box-shadow:0 8px 18px rgba(12,44,80,0.04);">Products<br/><strong>+420</strong></div>
+            <div style="min-width:120px;padding:12px;border-radius:12px;background:#fff;box-shadow:0 8px 18px rgba(12,44,80,0.04);">Clients<br/><strong>100+</strong></div>
+          </div>
+        </div>
+
+        <div class="glass" style="display:flex;flex-direction:column;gap:10px">
+          <h4 style="margin:0">Featured Pallets</h4>
+          <div class="muted">1200x1000 mm — 50 units available</div>
+          <div style="display:flex;gap:10px;margin-top:8px">
+            <button class="pill" onclick="showCategory('pallets')">View Pallets</button>
+            <button class="pill" onclick="showCategory('cables')">View Cables</button>
+          </div>
+        </div>
+      </aside>
+
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="section" aria-labelledby="productsHeading">
+      <h3 id="productsHeading">Products & Inventory</h3>
+      <div class="filters" role="list">
+        <div class="filter" onclick="filterItem('all')">All</div>
+        <div class="filter" onclick="filterItem('pallets')">Pallets</div>
+        <div class="filter" onclick="filterItem('cables')">Cables</div>
+        <div class="filter" onclick="filterItem('scrap')">Scrap</div>
+        <div class="filter" onclick="filterItem('materials')">Building Materials</div>
+      </div>
+
+      <div id="productGrid" class="grid" aria-live="polite">
+        <!-- sample cards (ideally rendered server-side from database) -->
+        <div class="card" data-cat="pallets">
+          <img src="https://via.placeholder.com/600x400?text=Pallet+1200x1000" alt="Pallet 1200x1000">
+          <h4>Pallet — 1200 x 1000 mm</h4>
+          <div class="meta"><span>Qty: 50</span><span>Code: PL-1200</span></div>
+          <p class="muted">Standard wooden pallet, ideal for heavy-duty storage and shipping.</p>
+        </div>
+
+        <div class="card" data-cat="pallets">
+          <img src="https://via.placeholder.com/600x400?text=Pallet+800x1200" alt="Pallet 800x1200">
+          <h4>Pallet — 800 x 1200 mm</h4>
+          <div class="meta"><span>Qty: 120</span><span>Code: PL-800</span></div>
+          <p class="muted">Euro-style pallet, reusable and treated for export.</p>
+        </div>
+
+        <div class="card" data-cat="cables">
+          <img src="https://via.placeholder.com/600x400?text=Cable+10mm" alt="Cable 10mm">
+          <h4>Power Cable — 10 mm²</h4>
+          <div class="meta"><span>Length: 200 m rolls</span><span>Code: CB-10</span></div>
+          <p class="muted">Single-core copper conductor cable for power distribution.</p>
+        </div>
+
+        <div class="card" data-cat="cables">
+          <img src="https://via.placeholder.com/600x400?text=Cable+2.5mm" alt="Cable 2.5mm">
+          <h4>Power Cable — 2.5 mm²</h4>
+          <div class="meta"><span>Length: 500 m rolls</span><span>Code: CB-2.5</span></div>
+          <p class="muted">Flexible multicore cable suitable for general wiring.</p>
+        </div>
+
+        <div class="card" data-cat="scrap">
+          <img src="https://via.placeholder.com/600x400?text=Scrap+Metal" alt="Scrap metal">
+          <h4>Scrap Metal</h4>
+          <div class="meta"><span>We buy & sell</span><span>Collection Avl.</span></div>
+          <p class="muted">We receive scrap items and assist with resale to verified buyers.</p>
+        </div>
+
+        <div class="card" data-cat="materials">
+          <img src="https://via.placeholder.com/600x400?text=Cement+Bags" alt="Cement Bags">
+          <h4>Portland Cement — 50kg Bag</h4>
+          <div class="meta"><span>Qty: 2000</span><span>Code: CM-50</span></div>
+          <p class="muted">High-grade cement for structural & finishing works.</p>
+        </div>
+
+        <div class="card" data-cat="materials">
+          <img src="https://via.placeholder.com/600x400?text=Steel+Bars" alt="Steel Bars">
+          <h4>Rebar — TMT 16 mm</h4>
+          <div class="meta"><span>Length: 12 m</span><span>Code: SB-16</span></div>
+          <p class="muted">High-strength reinforcement bars for concrete structures.</p>
+        </div>
+
+        <div class="card" data-cat="materials">
+          <img src="https://via.placeholder.com/600x400?text=Bricks" alt="Bricks">
+          <h4>Hollow Bricks — 230 x 110 x 76 mm</h4>
+          <div class="meta"><span>Qty: 20,000</span><span>Code: BR-230</span></div>
+          <p class="muted">Quality bricks for masonry and partition walls.</p>
+        </div>
+
+        <div class="card" data-cat="pallets">
+          <img src="https://via.placeholder.com/600x400?text=Plastic+Pallet" alt="Plastic Pallet">
+          <h4>Plastic Pallet — 1200 x 1000</h4>
+          <div class="meta"><span>Qty: 30</span><span>Code: PL-PP1200</span></div>
+          <p class="muted">Hygienic, reusable plastic pallet for food-grade logistics.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Clients -->
+    <section id="clients" class="section">
+      <h3>Our Clients</h3>
+      <p class="muted">We proudly serve major clients across Bahrain and the GCC.</p>
+      <div class="clients" style="margin-top:12px">
+        <div class="client"><svg width="36" height="36" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#1A73E8"/></svg><div><strong>BAPCO</strong><div class="muted" style="font-size:13px">Oil & Energy</div></div></div>
+        <div class="client"><svg width="36" height="36" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="4" fill="#4aa3ff"/></svg><div><strong>Milda</strong><div class="muted" style="font-size:13px">Industrial Contractor</div></div></div>
+        <div class="client"><svg width="36" height="36" viewBox="0 0 24 24"><path d="M2 12h20" stroke="#8b8b8b" stroke-width="2"/></svg><div><strong>Al-Farhan Contracting</strong><div class="muted" style="font-size:13px">Construction</div></div></div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section about">
+      <div class="glass">
+        <h3>About Farzana Trading</h3>
+        <p class="muted">Farzana Trading is a Bahrain-based supplier of construction materials, pallets, electrical cables and scrap management services. Since our establishment, we have committed to timely deliveries, transparent pricing and long-term relationships with industrial and construction clients.</p>
+        <h4 style="margin-top:12px">Vision</h4>
+        <p>To be the region's most trusted partner for sustainable supply-chain solutions — bridging quality materials with efficient logistics.</p>
+        <h4>Mission</h4>
+        <ul class="muted">
+          <li>Provide high-quality materials and accessories at competitive prices.</li>
+          <li>Offer dependable scrap collection & resale services that reduce waste.</li>
+          <li>Build lasting partnerships with clients through transparency and reliability.</li>
+        </ul>
+      </div>
+
+      <aside class="glass">
+        <h4>Services</h4>
+        <ul class="muted">
+          <li>Bulk supply of building materials (cement, steel, bricks, aggregates)</li>
+          <li>Pallet supply — wooden & plastic; custom sizes & quantities</li>
+          <li>Electrical cables & wiring — multiple mm specifications</li>
+          <li>Scrap collection, valuation and buyer network access</li>
+          <li>Logistics coordination & delivery across Bahrain</li>
+        </ul>
+        <div style="margin-top:12px">
+          <strong>Why choose us?</strong>
+          <p class="muted">Fast quotes · Verified clients · Dedicated account managers · Competitive pricing</p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+      <div class="glass">
+        <h3>Contact Us</h3>
+        <p class="muted">Send us a message or request a quote — we'll get back within one business day.</p>
+        <form id="contactForm" onsubmit="submitForm(event)">
+          <input type="text" id="name" placeholder="Full name" required />
+          <input type="email" id="email" placeholder="Email address" required />
+          <input type="text" id="subject" placeholder="Subject" />
+          <textarea id="message" placeholder="Message" rows="5" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+
+      <aside class="glass">
+        <h4>Map & Location</h4>
+        <p class="muted">Main Office — Manama, Bahrain</p>
+        <!-- Replace with your real Google Maps embed URL with API / embed link -->
+        <div style="border-radius:12px;overflow:hidden;margin-top:10px;">
+          <iframe title="Farzana Trading Location" src="https://www.google.com/maps?q=Manama+Bahrain&output=embed" width="100%" height="260" frameborder="0" style="border:0"></iframe>
+        </div>
+
+        <div style="margin-top:12px">
+          <strong>Phone</strong>
+          <div class="muted">+973 3XX XXXX</div>
+          <strong style="margin-top:8px;display:block">Email</strong>
+          <div class="muted">info@farzanatrading.com</div>
+        </div>
+
+      </aside>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Farzana Trading</h4>
+        <p class="muted">Supplier of pallets, cables, building materials and scrap solutions. Serving BAPCO, Milda and other major clients.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="muted">
+          <li><a href="#products">Products</a></li>
+          <li><a href="#clients">Clients</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <p class="muted">Follow us on our business accounts for stock updates and offers.</p>
+      </div>
+    </div>
+    <div style="max-width:1200px;margin:18px auto 0;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center">
+      <div>© Farzana Trading — All rights reserved.</div>
+      <div class="muted">Designed with care · Bahrain</div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple interactivity: filtering and search
+    function filterItem(cat){
+      const cards = document.querySelectorAll('#productGrid .card');
+      if(cat==='all'){
+        cards.forEach(c=>c.style.display='block');
+      } else {
+        cards.forEach(c=> c.dataset.cat===cat ? c.style.display='block' : c.style.display='none');
+      }
+      // small smooth scroll to products
+      document.getElementById('products').scrollIntoView({behavior:'smooth'});
+    }
+
+    function showCategory(cat){
+      filterItem(cat);
+    }
+
+    function performSearch(){
+      const q = document.getElementById('searchInput').value.trim().toLowerCase();
+      const cards = document.querySelectorAll('#productGrid .card');
+      if(!q){cards.forEach(c=>c.style.display='block');return}
+      cards.forEach(c=>{
+        const t = (c.querySelector('h4').innerText + ' ' + (c.querySelector('p')?.innerText||'') + ' ' + (c.querySelector('.meta')?.innerText||'')).toLowerCase();
+        c.style.display = t.includes(q) ? 'block' : 'none';
+      })
+      document.getElementById('products').scrollIntoView({behavior:'smooth'});
+    }
+
+    function submitForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      alert('Thanks '+name+'! Your message was received — we will contact you shortly.');
+      e.target.reset();
+    }
+
+    // Mobile menu (simple toggle) - left as basic because navlinks hidden on small screens
+    function toggleMobileMenu(){
+      const nav = document.querySelector('.navlinks');
+      if(nav.style.display==='flex') nav.style.display='none'; else nav.style.display='flex';
+      nav.style.flexDirection='column';nav.style.position='absolute';nav.style.right='18px';nav.style.top='82px';nav.style.background='white';nav.style.padding='12px';nav.style.borderRadius='12px';
+    }
+
+    // Tiny entrance animation for cards
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const cards = document.querySelectorAll('.card');
+      cards.forEach((c,i)=>{c.style.opacity=0;c.style.transform='translateY(8px)';setTimeout(()=>{c.style.transition='all .45s cubic-bezier(.2,.9,.2,1)';c.style.opacity=1;c.style.transform='translateY(0)';}, 80*i)});
+    });
+  </script>
+</body>
+</html>
