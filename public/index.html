@@ -6,414 +6,777 @@
   <title>Farzana Trading — Building Materials, Pallets, Cables & Scraps</title>
   <meta name="description" content="Farzana Trading — Supplier of pallets, cables, building materials and scrap services in Bahrain. Professional, light glossy design with animations." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#f7fbff;
-      --card:#ffffff;
-      --muted:#6b7280;
-      --accent:#1A73E8; /* royal blue */
-      --glass: rgba(255,255,255,0.65);
-      --glow: 0 10px 30px rgba(26,115,232,0.12);
-      --radius:16px;
-      color-scheme: light;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,#f7fbff 0%, #eef6ff 60%);}
-    a{color:inherit;text-decoration:none}
-
-    /* Navbar */
-    .nav{backdrop-filter: blur(8px);background:linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.55));border-radius:12px;padding:12px 18px;display:flex;align-items:center;gap:18px;position:sticky;top:18px;margin:18px;box-shadow:var(--glow)}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:56px;height:56px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#4aa3ff);color:#fff;font-weight:700;font-size:18px;box-shadow:0 6px 20px rgba(26,115,232,0.18);}
-    .brand h1{font-size:18px;margin:0}
-    .brand p{margin:0;color:var(--muted);font-size:12px}
-    .navlinks{margin-left:auto;display:flex;gap:14px;align-items:center}
-    .navlinks a{padding:8px 12px;border-radius:10px;font-weight:600;color:#0f172a;display:inline-flex;align-items:center;gap:8px}
-    .navlinks a:hover{transform:translateY(-3px);transition:all .22s}
-    .cta{background:linear-gradient(90deg,var(--accent),#3aa0ff);color:#fff;padding:10px 14px;border-radius:12px;box-shadow:0 8px 30px rgba(26,115,232,0.18)}
-
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1fr 480px;gap:32px;align-items:center;padding:48px 18px;max-width:1200px;margin:18px auto}
-    .hero-card{background:var(--card);padding:28px;border-radius:18px;box-shadow:var(--glow);backdrop-filter:blur(6px)}
-    .hero h2{margin:0 0 8px;font-size:32px;line-height:1.05}
-    .hero p{color:var(--muted);margin:0 0 18px}
-    .search{display:flex;gap:10px}
-    .search input{flex:1;padding:12px 14px;border-radius:12px;border:1px solid #e6eef9;background:transparent}
-    .search button{padding:12px 16px;border-radius:12px;border:none;background:linear-gradient(90deg,var(--accent),#3aa0ff);color:white;font-weight:700}
-
-    /* Animated icons row */
-    .icons{display:flex;gap:12px;margin-top:18px}
-    .icon-card{display:flex;gap:12px;align-items:center;padding:10px 12px;border-radius:12px;background:linear-gradient(180deg, rgba(250,250,255,0.9), rgba(245,249,255,0.7));box-shadow:0 4px 18px rgba(12,44,80,0.04)}
-    .icon{width:48px;height:48px;border-radius:10px;display:grid;place-items:center;background:rgba(250,250,255,0.6);animation:float 4s ease-in-out infinite}
-    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
-
-    /* Products & filters */
-    .section{max-width:1200px;margin:26px auto;padding:18px}
-    .section h3{margin:0 0 12px}
-    .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
-    .filter{padding:8px 12px;border-radius:10px;background:var(--glass);border:1px solid rgba(26,115,232,0.06);cursor:pointer}
-
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .card{background:linear-gradient(180deg,var(--card),#fbfeff);padding:14px;border-radius:14px;border:1px solid rgba(16,24,40,0.03);box-shadow:0 6px 18px rgba(12,44,80,0.04);transition:transform .18s,box-shadow .18s}
-    .card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(16,115,255,0.08)}
-    .card img{width:100%;height:160px;object-fit:cover;border-radius:10px}
-    .card h4{margin:10px 0 4px}
-    .meta{display:flex;justify-content:space-between;color:var(--muted);font-size:13px}
-
-    /* Clients */
-    .clients{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
-    .client{display:flex;gap:10px;align-items:center;padding:10px 12px;border-radius:12px;background:#fff;border:1px solid rgba(16,24,40,0.03)}
-
-    /* About */
-    .about{display:grid;grid-template-columns:1fr 380px;gap:18px}
-    .glass{background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.7));padding:18px;border-radius:14px;box-shadow:var(--glow)}
-
-    /* Contact */
-    .contact{display:grid;grid-template-columns:1fr 420px;gap:18px}
-    .contact form{display:flex;flex-direction:column;gap:10px}
-    input[type=text],input[type=email],textarea{padding:10px;border-radius:10px;border:1px solid #e6eef9}
-    button[type=submit]{padding:12px;border-radius:12px;border:none;background:linear-gradient(90deg,var(--accent),#3aa0ff);color:#fff;font-weight:700}
-
-    /* Footer */
-    footer{margin-top:28px;padding:28px 18px;background:linear-gradient(180deg,#fbfdff,#eef7ff);}
-    .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
-
-    /* Responsive */
-    @media (max-width:1000px){.hero{grid-template-columns:1fr 360px}.grid{grid-template-columns:repeat(2,1fr)}.about{grid-template-columns:1fr}
-      .contact{grid-template-columns:1fr}
-    }
-    @media (max-width:640px){.nav{margin:12px;padding:10px}.hero{grid-template-columns:1fr;gap:12px;padding:18px}
-      .grid{grid-template-columns:1fr}
-      .navlinks{display:none}
-      .hamburger{display:block;margin-left:auto}
-    }
-
-    /* small helpers */
-    .muted{color:var(--muted)}
-    .pill{padding:6px 10px;border-radius:999px;background:rgba(26,115,232,0.08);font-weight:600;color:var(--accent)}
-  </style>
+  <link href="css/styles.css" rel="stylesheet"/>
 </head>
 <body>
-  <div class="nav">
-    <div class="brand">
-      <div class="logo">FT</div>
-      <div>
-        <h1>Farzana Trading</h1>
-        <p>Building Materials · Pallets · Cables · Scrap Solutions</p>
+  <!-- Scroll to Top Button -->
+<button id="scrollTopBtn" title="Go to top">🔝</button>
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- Logo -->
+<div class="logo" id="logo">
+  <div class="logo-wrapper">
+    <img src="images/farzanatransparentlogo.png" alt="Farzana Trading">
+  </div>
+  <span id="logo-text" class="logo-text">Farzana Trading W.L.L</span>
+</div>
+
+      <!-- Hamburger Toggle -->
+      <div class="nav-toggle">☰</div>
+
+      <!-- Wire Menu -->
+      <nav class="main-nav wire-menu">
+        <a href="#pallets" class="wire-node">📦 Pallets</a>
+        <a href="#cables" class="wire-node">🔌 Cables</a>
+        <a href="#scraps" class="wire-node">♻️ Scraps</a>
+        <a href="#materials" class="wire-node">🏗️ Materials</a>
+        <a href="#clients" class="wire-node">🤝 Clients</a>
+        <a href="#about" class="wire-node">📘 About</a>
+        <a href="#contact" class="wire-node">📍 Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-parallax"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content slide-in">
+      <h1>Farzana Trading W.L.L</h1>
+      <p>Your Trusted Supplier for Pallets, Cables, Scraps & Building Materials</p>
+      <button class="btn primary" onclick="location.href='#contact'">Get in Touch</button>
+
+      <!-- Scrolling Animated Cards -->
+      <div class="scrolling-cards-wrapper">
+        <div class="scrolling-cards">
+          <div class="card-item">♻️ Scrap Items</div>
+          <div class="card-item">🪵 Wood Pallets</div>
+          <div class="card-item">🛠️ Steel Pallets</div>
+          <div class="card-item">🔌 Wires</div>
+          <div class="card-item">⚡ Cables</div>
+          <div class="card-item">🏗️ Cement</div>
+          <div class="card-item">🏗️ Blocks</div>
+          <div class="card-item">🏗️ Pipes</div>
+          <div class="card-item">🎨 Paints</div>
+          <div class="card-item">💡 Switches</div>
+          <div class="card-item">🧰 Equipments</div>
+          <!-- Repeat for smooth continuous scroll -->
+          <div class="card-item">♻️ Scrap Items</div>
+          <div class="card-item">🪵 Wood Pallets</div>
+          <div class="card-item">🛠️ Steel Pallets</div>
+          <div class="card-item">🔌 Wires</div>
+          <div class="card-item">⚡ Cables</div>
+          <div class="card-item">🏗️ Cement</div>
+          <div class="card-item">🏗️ Blocks</div>
+          <div class="card-item">🏗️ Pipes</div>
+          <div class="card-item">🎨 Paints</div>
+          <div class="card-item">💡 Switches</div>
+          <div class="card-item">🧰 Equipments</div>
+        </div>
       </div>
     </div>
-    <nav class="navlinks" aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#products">Products</a>
-      <a href="#clients">Clients</a>
-      <a href="#about">About</a>
-      <a href="#contact" class="cta">Contact Us</a>
-    </nav>
-    <button class="hamburger" aria-label="menu" style="display:none" onclick="toggleMobileMenu()">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </button>
-  </div>
+  </section>
 
-  <main id="home">
-    <section class="hero" style="max-width:1200px">
-      <div class="hero-card">
-        <h2>Trusted supplier of building materials & industrial supplies in Bahrain</h2>
-        <p>Farzana Trading provides high-quality pallets, cables, building materials and scrap handling services — fast delivery, competitive pricing and dedicated account support.</p>
-        <div class="search">
-          <input id="searchInput" placeholder="Search products, sizes or item codes..." />
-          <button onclick="performSearch()">Search</button>
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container slide-in">
+      <div class="section-head">📘 About Us</div>
+      <p class="section-sub">
+        Farzana Trading W.L.L is a leading distributor of industrial goods and construction materials in Bahrain.
+        With over a decade of experience, we pride ourselves on delivering top-quality products and unmatched customer
+        service to
+        manufacturing, construction, and petrochemical sectors. Our goal is to ensure that every client receives timely,
+        cost-effective, and reliable solutions for all their industrial material needs.
+      </p>
+
+      <div class="cards-grid">
+        <!-- Vision -->
+        <div class="card glow-card">
+          <div class="card-title"><span class="card-icon">🎯</span> Vision</div>
+          <p>
+            To be Bahrain’s most trusted and customer-centric trading partner, recognized for our dedication,
+            integrity, and excellence in supplying high-quality industrial and building materials.
+          </p>
         </div>
-        <div class="icons">
-          <div class="icon-card">
-            <div class="icon" title="Pallets">
-              <!-- animated pallet svg -->
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="20" height="3" rx="1" fill="#1A73E8" opacity="0.95"/><rect x="2" y="12" width="20" height="3" rx="1" fill="#4aa3ff" opacity="0.95"/></svg>
-            </div>
-            <div>
-              <div style="font-weight:700">Pallets</div>
-              <div class="muted" style="font-size:13px">Multiple sizes & quantities</div>
+
+        <!-- Mission -->
+        <div class="card glow-card">
+          <div class="card-title"><span class="card-icon">🚀</span> Mission</div>
+          <p>
+            Deliver superior industrial materials and services with a commitment to quality, timely delivery,
+            competitive pricing, and fostering long-term partnerships with our clients.
+          </p>
+        </div>
+
+        <!-- Values -->
+        <div class="card glow-card">
+          <div class="card-title"><span class="card-icon">💡</span> Values</div>
+          <p>
+            We operate with transparency, professionalism, and sustainability in mind. Our core values include
+            reliability, innovation, and continuous improvement to meet evolving client needs.
+          </p>
+        </div>
+
+        <!-- Reach -->
+        <div class="card glow-card">
+          <div class="card-title"><span class="card-icon">🌐</span> Reach</div>
+          <p>
+            Serving multiple sectors across Bahrain, Farzana Trading ensures that every industrial and construction
+            project has access to premium materials delivered efficiently and securely.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pallets -->
+  <section id="pallets" class="section">
+    <div class="container slide-in">
+      <div class="section-head">📦 Pallets Collection</div>
+      <p class="section-sub">
+        We provide high-quality pallets suitable for all industrial and commercial applications. Explore our Wood and
+        Steel Pallets below.
+      </p>
+
+      <div class="scrap-grid">
+        <!-- Wood Pallets -->
+        <div class="scrap-card">
+          <div class="card-title"><span class="card-icon">🪵</span> Wood Pallets</div>
+
+          <!-- Auto-scroll images -->
+          <div class="scrolling-images">
+            <div class="scrolling-images-inner">
+              <img src="images/pallets.jfif" alt="Wood Pallet 1" class="modal-img">
+              <img src="images/pallets1.jfif" alt="Wood Pallet 2" class="modal-img">
+              <img src="images/pallets2.jfif" alt="Wood Pallet 3" class="modal-img">
+              <!-- Repeat for smooth scroll -->
+              <img src="images/pallets3.jfif" alt="Wood Pallet 4" class="modal-img">
+              <img src="images/pallets4.jfif" alt="Wood Pallet 5" class="modal-img">
+              <img src="images/pallets5.jfif" alt="Wood Pallet 6" class="modal-img">
             </div>
           </div>
 
-          <div class="icon-card">
-            <div class="icon" title="Cables">
-              <!-- animated cable -->
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 12c2-6 12-6 16 0" stroke="#1A73E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div>
-              <div style="font-weight:700">Cables</div>
-              <div class="muted" style="font-size:13px">All mm sizes, single/multi-core</div>
+          <p>
+            Durable wooden pallets designed to withstand heavy loads and frequent handling.
+          </p>
+          <ul class="scrap-details">
+            <li>📦 Available Sizes: 800x1200 mm, 1000x1200 mm, 1200x1200 mm</li>
+            <li>⚡ Usage: Material storage, transportation, warehouse stacking</li>
+            <li>⭐ Made from premium timber for long-lasting durability</li>
+            <li>🌱 Eco-friendly and recyclable</li>
+          </ul>
+        </div>
+
+        <!-- Steel Pallets -->
+        <div class="scrap-card">
+          <div class="card-title"><span class="card-icon">🔩</span> Steel Pallets</div>
+
+          <!-- Auto-scroll images -->
+          <div class="scrolling-images">
+            <div class="scrolling-images-inner">
+              <img src="images/steelpallets.jfif" alt="Steel Pallet 1" class="modal-img">
+              <img src="images/steelpallets1.jfif" alt="Steel Pallet 2" class="modal-img">
+              <img src="images/steelpallets2.jfif" alt="Steel Pallet 3" class="modal-img">
+              <!-- Repeat for smooth scroll -->
+              <img src="images/steelpallets3.jfif" alt="Steel Pallet 4" class="modal-img">
+              <img src="images/steelpallets4.jfif" alt="Steel Pallet 5" class="modal-img">
             </div>
           </div>
 
-          <div class="icon-card">
-            <div class="icon" title="Scrap Services">
-              <!-- scrap -->
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2v6" stroke="#1A73E8" stroke-width="2" stroke-linecap="round"/><path d="M5 12h14" stroke="#4aa3ff" stroke-width="2" stroke-linecap="round"/></svg>
+          <p>
+            Heavy-duty steel pallets for long-term industrial usage and maximum load support.
+          </p>
+          <ul class="scrap-details">
+            <li>📦 Available Sizes: 1000x1200 mm, 1200x1200 mm, 1200x1400 mm</li>
+            <li>⚡ Usage: Industrial warehouses, export shipping, heavy equipment transport</li>
+            <li>⭐ Corrosion-resistant steel with reinforced structure</li>
+            <li>💫 Durable and reusable for multiple years</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wires & Cables -->
+  <section id="cables" class="section">
+    <div class="container slide-in">
+      <div class="section-head">🔌 Wires & Cables Collection</div>
+      <p class="section-sub">
+        Farzana Trading provides a wide variety of high-quality wires and cables suitable for industrial, commercial,
+        and residential applications. Browse our Copper, Aluminum, Multi-Core, Flexible, and Armoured Cables below.
+      </p>
+
+      <div class="scrap-grid">
+        <!-- Copper Wires -->
+        <div class="scrap-card">
+          <div class="card-title">⚡ Copper Wires</div>
+
+          <!-- Auto-scroll images -->
+          <div class="scrolling-images">
+            <div class="scrolling-images-inner">
+              <img src="images/CopperWires.jfif" alt="Copper Wire 1" class="modal-img">
+              <img src="images/CopperWires1.jfif" alt="Copper Wire 2" class="modal-img">
+              <img src="images/CopperWires2.jfif" alt="Copper Wire 3" class="modal-img">
+              <img src="images/CopperWires3.jfif" alt="Copper Wire 4" class="modal-img">
+              <img src="images/CopperWires4.jfif" alt="Copper Wire 5" class="modal-img">
+              <img src="images/CopperWires5.jfif" alt="Copper Wire 6" class="modal-img">
             </div>
-            <div>
-              <div style="font-weight:700">Scrap</div>
-              <div class="muted" style="font-size:13px">Buy & sell — collection available</div>
+          </div>
+
+          <p>
+            High-conductivity copper wires for all electrical installations.
+          </p>
+          <ul class="scrap-details">
+            <li>📦 Available Sizes: 1.5mm², 2.5mm², 4mm², 6mm²</li>
+            <li>⚡ Usage: Electrical wiring, power distribution, industrial machinery</li>
+            <li>⭐ Flexible and durable insulation for long-lasting use</li>
+            <li>💫 Compliant with international safety standards</li>
+          </ul>
+        </div>
+
+        <!-- Aluminum Cables -->
+        <div class="scrap-card">
+          <div class="card-title">🔗 Aluminum Cables</div>
+
+          <div class="scrolling-images">
+            <div class="scrolling-images-inner">
+              <img src="images/AluminumCables.jfif" alt="Aluminum Cable 1" class="modal-img">
+              <img src="images/AluminumCables1.jfif" alt="Aluminum Cable 2" class="modal-img">
+              <img src="images/AluminumCables2.jfif" alt="Aluminum Cable 3" class="modal-img">
+              <img src="images/AluminumCables3.jfif" alt="Aluminum Cable 4" class="modal-img">
+              <img src="images/AluminumCables4.jfif" alt="Aluminum Cable 5" class="modal-img">
+              <img src="images/AluminumCables5.jfif" alt="Aluminum Cable 6" class="modal-img">
             </div>
           </div>
 
+          <p>
+            Lightweight and cost-effective aluminum cables for industrial applications.
+          </p>
+          <ul class="scrap-details">
+            <li>📦 Available Sizes: 10mm², 16mm², 25mm², 35mm²</li>
+            <li>⚡ Usage: Overhead lines, power distribution, heavy equipment</li>
+            <li>⭐ Corrosion-resistant aluminum with reinforced insulation</li>
+            <li>💫 Durable and long-lasting</li>
+          </ul>
         </div>
 
-        <div style="display:flex;gap:10px;margin-top:18px;align-items:center">
-          <a class="pill" href="#products">Explore Products</a>
-          <a href="#contact" style="color:var(--accent);font-weight:700">Request a Quote →</a>
-        </div>
-      </div>
+        <!-- Multi-Core Cables -->
+        <div class="scrap-card">
+          <div class="card-title">🟢 Multi-Core Cables</div>
 
-      <aside style="display:flex;flex-direction:column;gap:14px">
-        <div class="glass">
-          <h4 style="margin:0">Quick Stats</h4>
-          <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
-            <div style="min-width:120px;padding:12px;border-radius:12px;background:#fff;box-shadow:0 8px 18px rgba(12,44,80,0.04);">Products<br/><strong>+420</strong></div>
-            <div style="min-width:120px;padding:12px;border-radius:12px;background:#fff;box-shadow:0 8px 18px rgba(12,44,80,0.04);">Clients<br/><strong>100+</strong></div>
+          <div class="scrolling-images">
+            <div class="scrolling-images-inner">
+              <img src="images/MultiCoreCables.jfif" alt="Multi-Core Cable 1" class="modal-img">
+              <img src="images/MultiCoreCables1.jfif" alt="Multi-Core Cable 2" class="modal-img">
+              <img src="images/MultiCoreCables2.jfif" alt="Multi-Core Cable 3" class="modal-img">
+              <img src="images/MultiCoreCables3.jfif" alt="Multi-Core Cable 4" class="modal-img">
+              <img src="images/MultiCoreCables4.jfif" alt="Multi-Core Cable 5" class="modal-img">
+              <img src="images/MultiCoreCables5.jfif" alt="Multi-Core Cable 6" class="modal-img">
+            </div>
           </div>
+
+          <p>
+            Versatile multi-core cables for industrial and commercial electrical networks.
+          </p>
+          <ul class="scrap-details">
+            <li>📦 Available Types: 2-Core, 3-Core, 4-Core</li>
+            <li>⚡ Usage: Control circuits, power distribution, building wiring</li>
+            <li>⭐ Flexible PVC insulation with durable outer sheath</li>
+            <li>💫 Certified for safety and high performance</li>
+          </ul>
         </div>
 
-        <div class="glass" style="display:flex;flex-direction:column;gap:10px">
-          <h4 style="margin:0">Featured Pallets</h4>
-          <div class="muted">1200x1000 mm — 50 units available</div>
-          <div style="display:flex;gap:10px;margin-top:8px">
-            <button class="pill" onclick="showCategory('pallets')">View Pallets</button>
-            <button class="pill" onclick="showCategory('cables')">View Cables</button>
+        <!-- Flexible Wires -->
+        <div class="scrap-card">
+          <div class="card-title">🔌 Flexible Wires</div>
+
+          <div class="scrolling-images">
+            <div class="scrolling-images-inner">
+              <img src="images/FlexibleWires.jfif" alt="Flexible Wire 1" class="modal-img">
+              <img src="images/FlexibleWires1.jfif" alt="Flexible Wire 2" class="modal-img">
+              <img src="images/FlexibleWires2.jfif" alt="Flexible Wire 3" class="modal-img">
+              <img src="images/FlexibleWires3.jfif" alt="Flexible Wire 4" class="modal-img">
+              <img src="images/FlexibleWires4.jfif" alt="Flexible Wire 5" class="modal-img">
+              <img src="images/FlexibleWires5.jfif" alt="Flexible Wire 6" class="modal-img">
+            </div>
           </div>
+
+          <p>
+            Highly flexible wires for installations requiring bending and twisting.
+          </p>
+          <ul class="scrap-details">
+            <li>📦 Available Sizes: 0.5mm² to 6mm²</li>
+            <li>⚡ Usage: Appliances, control panels, portable equipment</li>
+            <li>⭐ Durable insulation and easy to handle</li>
+            <li>💫 Excellent conductivity and safety standards</li>
+          </ul>
         </div>
-      </aside>
 
-    </section>
+        <!-- Armoured Cables -->
+        <div class="scrap-card">
+          <div class="card-title">🛡️ Armoured Cables</div>
 
-    <!-- Products -->
-    <section id="products" class="section" aria-labelledby="productsHeading">
-      <h3 id="productsHeading">Products & Inventory</h3>
-      <div class="filters" role="list">
-        <div class="filter" onclick="filterItem('all')">All</div>
-        <div class="filter" onclick="filterItem('pallets')">Pallets</div>
-        <div class="filter" onclick="filterItem('cables')">Cables</div>
-        <div class="filter" onclick="filterItem('scrap')">Scrap</div>
-        <div class="filter" onclick="filterItem('materials')">Building Materials</div>
+          <div class="scrolling-images">
+            <div class="scrolling-images-inner">
+              <img src="images/ArmouredCables.jfif" alt="Armoured Cable 1" class="modal-img">
+              <img src="images/ArmouredCables1.jfif" alt="Armoured Cable 2" class="modal-img">
+              <img src="images/ArmouredCables2.jfif" alt="Armoured Cable 3" class="modal-img">
+              <img src="images/ArmouredCables3.jfif" alt="Armoured Cable 4" class="modal-img">
+              <img src="images/ArmouredCables4.jfif" alt="Armoured Cable 5" class="modal-img">
+              <img src="images/ArmouredCables5.jfif" alt="Armoured Cable 6" class="modal-img">
+            </div>
+          </div>
+
+          <p>
+            Heavy-duty armoured cables for underground and outdoor installations.
+          </p>
+          <ul class="scrap-details">
+            <li>📦 Available Sizes: 10mm² to 95mm²</li>
+            <li>⚡ Usage: Underground cabling, power distribution, industrial plants</li>
+            <li>⭐ Steel wire armored for protection against mechanical damage</li>
+            <li>🔅 Weather and corrosion resistant</li>
+          </ul>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div id="productGrid" class="grid" aria-live="polite">
-        <!-- sample cards (ideally rendered server-side from database) -->
-        <div class="card" data-cat="pallets">
-          <img src="https://via.placeholder.com/600x400?text=Pallet+1200x1000" alt="Pallet 1200x1000">
-          <h4>Pallet — 1200 x 1000 mm</h4>
-          <div class="meta"><span>Qty: 50</span><span>Code: PL-1200</span></div>
-          <p class="muted">Standard wooden pallet, ideal for heavy-duty storage and shipping.</p>
+  <!-- Building Materials -->
+  <section id="materials" class="section">
+    <div class="container slide-in">
+      <div class="section-head">🏗️ Building Materials Collection</div>
+      <p class="section-sub">
+        Farzana Trading provides premium quality building materials for construction, renovation, and industrial
+        projects.
+        Explore Cement, Blocks, Pipes, Steels, Woods, Paints, Switches, Lights, Tiles, Granites, and Equipment below.
+      </p>
+
+      <div class="scrap-grid">
+        <!-- Cement -->
+        <div class="scrap-card">
+          <div class="card-title">⚪ Cement</div>
+          <div class="scrolling-images">
+            <div class="scrolling-images-inner">
+              <img src="images/Cement.jfif" alt="Cement 1" class="modal-img">
+              <img src="images/cement1.jfif" alt="Cement 2" class="modal-img">
+              <img src="images/cement2.jfif" alt="Cement 3" class="modal-img">
+              <img src="images/cement3.jfif" alt="Cement 4" class="modal-img">
+              <img src="images/cement4.jfif" alt="Cement 5" class="modal-img">
+              <img src="images/cement5.jfif" alt="Cement 6" class="modal-img">
+            </div>
+          </div>
+          <p>High-strength cement suitable for all types of construction work.</p>
+          <ul class="scrap-details">
+            <li>🏷️ Types: OPC, PPC, Sulfate Resistant</li>
+            <li>⚡ Usage: Residential, commercial, industrial projects</li>
+            <li>⭐ Complies with international quality standards</li>
+            <li>🧰 Available in 50kg and bulk bags</li>
+          </ul>
         </div>
 
-        <div class="card" data-cat="pallets">
-          <img src="https://via.placeholder.com/600x400?text=Pallet+800x1200" alt="Pallet 800x1200">
-          <h4>Pallet — 800 x 1200 mm</h4>
-          <div class="meta"><span>Qty: 120</span><span>Code: PL-800</span></div>
-          <p class="muted">Euro-style pallet, reusable and treated for export.</p>
+        <!-- Concrete Blocks -->
+        <div class="scrap-card">
+          <div class="card-title">🧱 Concrete Blocks</div>
+          <div class="scrolling-images">
+            <div class="scrolling-images-inner">
+              <img src="images/ConcreteBlocks.jfif" alt="Block 1" class="modal-img">
+              <img src="images/ConcreteBlocks1.jfif" alt="Block 2" class="modal-img">
+              <img src="images/ConcreteBlocks2.jfif" alt="Block 3" class="modal-img">
+              <img src="images/ConcreteBlocks3.jfif" alt="Block 4" class="modal-img">
+              <img src="images/ConcreteBlocks4.jfif" alt="Block 5" class="modal-img">
+              <img src="images/ConcreteBlocks5.jfif" alt="Block 6" class="modal-img">
+            </div>
+          </div>
+          <p>Durable concrete blocks for walls, partitions, and foundations.</p>
+          <ul class="scrap-details">
+            <li>📦 Sizes: 200x200x400mm, 150x200x400mm, 100x200x400mm</li>
+            <li>⚡ Usage: Residential, commercial, industrial buildings</li>
+            <li>⭐ High compression strength and long-lasting</li>
+            <li>🌱 Eco-friendly and cost-effective</li>
+          </ul>
         </div>
 
-        <div class="card" data-cat="cables">
-          <img src="https://via.placeholder.com/600x400?text=Cable+10mm" alt="Cable 10mm">
-          <h4>Power Cable — 10 mm²</h4>
-          <div class="meta"><span>Length: 200 m rolls</span><span>Code: CB-10</span></div>
-          <p class="muted">Single-core copper conductor cable for power distribution.</p>
+        <!-- Pipes -->
+        <div class="scrap-card">
+          <div class="card-title">🔵 Pipes</div>
+          <div class="scrolling-images">
+            <div class="scrolling-images-inner">
+              <img src="images/Pipes.jfif" alt="Pipe 1" class="modal-img">
+              <img src="images/pipes1.jfif" alt="Pipe 2" class="modal-img">
+              <img src="images/pipes2.jfif" alt="Pipe 3" class="modal-img">
+              <img src="images/pipes3.jfif" alt="Pipe 4" class="modal-img">
+              <img src="images/pipes4.jfif" alt="Pipe 5" class="modal-img">
+              <img src="images/pipes5.jfif" alt="Pipe 6" class="modal-img">
+            </div>
+          </div>
+          <p>High-quality pipes for water supply, drainage, and industrial applications.</p>
+          <ul class="scrap-details">
+            <li>✨ Material: PVC, CPVC, HDPE, GI</li>
+            <li>📦 Sizes: 20mm to 500mm diameter</li>
+            <li>⚡ Usage: Plumbing, irrigation, industrial installations</li>
+            <li>⭐ Corrosion-resistant and durable</li>
+          </ul>
         </div>
 
-        <div class="card" data-cat="cables">
-          <img src="https://via.placeholder.com/600x400?text=Cable+2.5mm" alt="Cable 2.5mm">
-          <h4>Power Cable — 2.5 mm²</h4>
-          <div class="meta"><span>Length: 500 m rolls</span><span>Code: CB-2.5</span></div>
-          <p class="muted">Flexible multicore cable suitable for general wiring.</p>
+        <!-- Steel -->
+        <div class="scrap-card">
+          <div class="card-title">🟢 Steel</div>
+          <div class="scrolling-images">
+            <div class="scrolling-images-inner">
+              <img src="images/Steel.jfif" alt="Steel 1" class="modal-img">
+              <img src="images/steel1.jfif" alt="Steel 2" class="modal-img">
+              <img src="images/steel2.jfif" alt="Steel 3" class="modal-img">
+              <img src="images/steel3.jfif" alt="Steel 4" class="modal-img">
+              <img src="images/steel4.jfif" alt="Steel 5" class="modal-img">
+              <img src="images/steel5.jfif" alt="Steel 6" class="modal-img">
+            </div>
+          </div>
+          <p>Reinforced steel bars and sections for construction and industrial use.</p>
+          <ul class="scrap-details">
+            <li>✨ Grades: TMT Bars, Mild Steel, Structural Steel</li>
+            <li>⚡ Usage: Reinforcement, frameworks, machinery structures</li>
+            <li>⭐ High tensile strength and durability</li>
+            <li>🧰 Available in rods, coils, and sections</li>
+          </ul>
         </div>
 
-        <div class="card" data-cat="scrap">
-          <img src="https://via.placeholder.com/600x400?text=Scrap+Metal" alt="Scrap metal">
-          <h4>Scrap Metal</h4>
-          <div class="meta"><span>We buy & sell</span><span>Collection Avl.</span></div>
-          <p class="muted">We receive scrap items and assist with resale to verified buyers.</p>
+        <!-- Wood -->
+        <div class="scrap-card">
+          <div class="card-title">🪵 Wood</div>
+          <div class="scrolling-images">
+            <div class="scrolling-images-inner">
+              <img src="images/Wood.jfif" alt="Wood 1" class="modal-img">
+              <img src="images/wood1.jfif" alt="Wood 2" class="modal-img">
+              <img src="images/wood2.jfif" alt="Wood 3" class="modal-img">
+              <img src="images/wood3.jfif" alt="Wood 4" class="modal-img">
+              <img src="images/wood4.jfif" alt="Wood 5" class="modal-img">
+              <img src="images/wood5.jfif" alt="Wood 6" class="modal-img">
+            </div>
+          </div>
+          <p>High-quality construction and furniture-grade wood for versatile use.</p>
+          <ul class="scrap-details">
+            <li>🏷️ Types: Teak, Pine, Mahogany, Oak</li>
+            <li>⚡ Usage: Furniture, flooring, paneling, structural works</li>
+            <li>⭐ Durable and treated for pest resistance</li>
+            <li>🧰 Available in planks, boards, and panels</li>
+          </ul>
         </div>
 
-        <div class="card" data-cat="materials">
-          <img src="https://via.placeholder.com/600x400?text=Cement+Bags" alt="Cement Bags">
-          <h4>Portland Cement — 50kg Bag</h4>
-          <div class="meta"><span>Qty: 2000</span><span>Code: CM-50</span></div>
-          <p class="muted">High-grade cement for structural & finishing works.</p>
+        <!-- Paints -->
+        <div class="scrap-card">
+          <div class="card-title">🎨 Paints</div>
+          <div class="scrolling-images">
+            <div class="scrolling-images-inner">
+              <img src="images/Paints.jfif" alt="Paint 1" class="modal-img">
+              <img src="images/Paints1.jfif" alt="Paint 2" class="modal-img">
+              <img src="images/Paints2.jfif" alt="Paint 3" class="modal-img">
+              <img src="images/Paints3.jfif" alt="Paint 4" class="modal-img">
+              <img src="images/Paints4.jfif" alt="Paint 5" class="modal-img">
+              <img src="images/Paints5.jfif" alt="Paint 6" class="modal-img">
+            </div>
+          </div>
+          <p>Premium interior and exterior paints for lasting color and protection.</p>
+          <ul class="scrap-details">
+            <li>🏷️ Types: Emulsion, Enamel, Waterproof, Texture</li>
+            <li>⚡ Usage: Walls, ceilings, furniture, exterior surfaces</li>
+            <li>🌱 Environment-friendly and low VOC</li>
+            <li>🧰 Available in all color shades</li>
+          </ul>
         </div>
 
-        <div class="card" data-cat="materials">
-          <img src="https://via.placeholder.com/600x400?text=Steel+Bars" alt="Steel Bars">
-          <h4>Rebar — TMT 16 mm</h4>
-          <div class="meta"><span>Length: 12 m</span><span>Code: SB-16</span></div>
-          <p class="muted">High-strength reinforcement bars for concrete structures.</p>
+        <!-- Switches & Lights -->
+        <div class="scrap-card">
+          <div class="card-title">💡 Switches & Lights</div>
+          <div class="scrolling-images">
+            <div class="scrolling-images-inner">
+              <img src="images/SwitchesLights.jfif" alt="Switch 1" class="modal-img">
+              <img src="images/SwitchesLights1.jfif" alt="Light 1" class="modal-img">
+              <img src="images/SwitchesLights2.jfif" alt="Light 2" class="modal-img">
+              <img src="images/SwitchesLights3.jfif" alt="Light 3" class="modal-img">
+              <img src="images/SwitchesLights4.jfif" alt="Light 4" class="modal-img">
+              <img src="images/SwitchesLights5.jfif" alt="Light 5" class="modal-img">
+            </div>
+          </div>
+          <p>Reliable electrical switches, sockets, and lighting solutions.</p>
+          <ul class="scrap-details">
+            <li>🏷️ Types: Switches, Sockets, LED, CFL, Tube Lights</li>
+            <li>⚡ Usage: Residential, commercial, and industrial installations</li>
+            <li>⭐ Durable and safe</li>
+            <li>🧰 Available in different designs and colors</li>
+          </ul>
         </div>
 
-        <div class="card" data-cat="materials">
-          <img src="https://via.placeholder.com/600x400?text=Bricks" alt="Bricks">
-          <h4>Hollow Bricks — 230 x 110 x 76 mm</h4>
-          <div class="meta"><span>Qty: 20,000</span><span>Code: BR-230</span></div>
-          <p class="muted">Quality bricks for masonry and partition walls.</p>
+        <!-- Tiles & Granites -->
+        <div class="scrap-card">
+          <div class="card-title">🟤 Tiles & Granites</div>
+          <div class="scrolling-images">
+            <div class="scrolling-images-inner">
+              <img src="images/TilesGranites.jfif" alt="Tile 1" class="modal-img">
+              <img src="images/TilesGranites1.jfif" alt="Granite 1" class="modal-img">
+              <img src="images/TilesGranites2.jfif" alt="Tile 2" class="modal-img">
+              <img src="images/TilesGranites3.jfif" alt="Tile 3" class="modal-img">
+              <img src="images/TilesGranites4.jfif" alt="Tile 4" class="modal-img">
+              <img src="images/TilesGranites5.jfif" alt="Tile 5" class="modal-img">
+            </div>
+          </div>
+          <p>High-quality flooring and wall finishes for residential and commercial spaces.</p>
+          <ul class="scrap-details">
+            <li>🏷️ Types: Ceramic, Porcelain, Marble, Granite</li>
+            <li>⚡ Usage: Flooring, walls, countertops</li>
+            <li>⭐ Durable, polished, and scratch-resistant</li>
+            <li>🧰 Available in various sizes and colors</li>
+          </ul>
         </div>
 
-        <div class="card" data-cat="pallets">
-          <img src="https://via.placeholder.com/600x400?text=Plastic+Pallet" alt="Plastic Pallet">
-          <h4>Plastic Pallet — 1200 x 1000</h4>
-          <div class="meta"><span>Qty: 30</span><span>Code: PL-PP1200</span></div>
-          <p class="muted">Hygienic, reusable plastic pallet for food-grade logistics.</p>
+        <!-- Equipments -->
+        <div class="scrap-card">
+          <div class="card-title">🛠️ Equipment</div>
+          <div class="scrolling-images">
+            <div class="scrolling-images-inner">
+              <img src="images/equipment.jfif" alt="Equipment 1" class="modal-img">
+              <img src="images/equipment1.jfif" alt="Equipment 2" class="modal-img">
+              <img src="images/equipment2.png" alt="Equipment 3" class="modal-img">
+              <img src="images/equipment3.jfif" alt="Equipment 4" class="modal-img">
+              <img src="images/equipment4.jfif" alt="Equipment 5" class="modal-img">
+              <img src="images/equipment5.jfif" alt="Equipment 6" class="modal-img">
+            </div>
+          </div>
+          <p>Tools and equipment for construction, maintenance, and industrial use.</p>
+          <ul class="scrap-details">
+            <li>🏷️ Types: Power Tools, Hand Tools, Safety Equipment</li>
+            <li>⚡ Usage: Construction, industrial projects, workshops</li>
+            <li>⭐ Durable and reliable for professional use</li>
+            <li>🧰 Available in sets or individual items</li>
+          </ul>
         </div>
 
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Clients -->
-    <section id="clients" class="section">
-      <h3>Our Clients</h3>
-      <p class="muted">We proudly serve major clients across Bahrain and the GCC.</p>
-      <div class="clients" style="margin-top:12px">
-        <div class="client"><svg width="36" height="36" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#1A73E8"/></svg><div><strong>BAPCO</strong><div class="muted" style="font-size:13px">Oil & Energy</div></div></div>
-        <div class="client"><svg width="36" height="36" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="4" fill="#4aa3ff"/></svg><div><strong>Milda</strong><div class="muted" style="font-size:13px">Industrial Contractor</div></div></div>
-        <div class="client"><svg width="36" height="36" viewBox="0 0 24 24"><path d="M2 12h20" stroke="#8b8b8b" stroke-width="2"/></svg><div><strong>Al-Farhan Contracting</strong><div class="muted" style="font-size:13px">Construction</div></div></div>
-      </div>
-    </section>
+  <!-- Scrap Items -->
+  <section id="scraps" class="section">
+    <div class="container slide-in">
+      <div class="section-head" style="color:#0077b6;">♻️ Scrap Items Collection</div>
+      <p class="section-sub" style="color:#555;">
+        Farzana Trading offers a wide range of scrap materials suitable for recycling, industrial, and manufacturing
+        purposes.
+        Explore Metal Scrap, Plastic Scrap, Electronic Scrap, and other recyclable materials below.
+      </p>
 
-    <!-- About -->
-    <section id="about" class="section about">
-      <div class="glass">
-        <h3>About Farzana Trading</h3>
-        <p class="muted">Farzana Trading is a Bahrain-based supplier of construction materials, pallets, electrical cables and scrap management services. Since our establishment, we have committed to timely deliveries, transparent pricing and long-term relationships with industrial and construction clients.</p>
-        <h4 style="margin-top:12px">Vision</h4>
-        <p>To be the region's most trusted partner for sustainable supply-chain solutions — bridging quality materials with efficient logistics.</p>
-        <h4>Mission</h4>
-        <ul class="muted">
-          <li>Provide high-quality materials and accessories at competitive prices.</li>
-          <li>Offer dependable scrap collection & resale services that reduce waste.</li>
-          <li>Build lasting partnerships with clients through transparency and reliability.</li>
-        </ul>
-      </div>
-
-      <aside class="glass">
-        <h4>Services</h4>
-        <ul class="muted">
-          <li>Bulk supply of building materials (cement, steel, bricks, aggregates)</li>
-          <li>Pallet supply — wooden & plastic; custom sizes & quantities</li>
-          <li>Electrical cables & wiring — multiple mm specifications</li>
-          <li>Scrap collection, valuation and buyer network access</li>
-          <li>Logistics coordination & delivery across Bahrain</li>
-        </ul>
-        <div style="margin-top:12px">
-          <strong>Why choose us?</strong>
-          <p class="muted">Fast quotes · Verified clients · Dedicated account managers · Competitive pricing</p>
+      <div class="scrap-grid">
+        <!-- Metal Scrap -->
+        <div class="scrap-card">
+          <div class="card-title">🛠️ Metal Scrap</div>
+          <div class="scrolling-images">
+            <div class="scrolling-images-inner">
+              <img src="images/MetalScrap.jfif" alt="Metal Scrap 1" class="modal-img">
+              <img src="images/MetalScrap1.jfif" alt="Metal Scrap 2" class="modal-img">
+              <img src="images/MetalScrap2.jfif" alt="Metal Scrap 3" class="modal-img">
+              <img src="images/MetalScrap3.jfif" alt="Metal Scrap 4" class="modal-img">
+              <img src="images/MetalScrap4.jfif" alt="Metal Scrap 5" class="modal-img">
+              <img src="images/MetalScrap5.jfif" alt="Metal Scrap 6" class="modal-img">
+            </div>
+          </div>
+          <p>Ferrous and non-ferrous metal scrap collected for recycling and industrial use.</p>
+          <ul class="scrap-details">
+            <li>🏷️ Types: Iron, Steel, Aluminum, Copper</li>
+            <li>⚡ Usage: Recycling plants, foundries, industrial manufacturing</li>
+            <li>✔️ Sorted and graded for quality and purity</li>
+            <li>🌱 Eco-friendly and sustainable material source</li>
+          </ul>
         </div>
-      </aside>
-    </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section contact">
-      <div class="glass">
-        <h3>Contact Us</h3>
-        <p class="muted">Send us a message or request a quote — we'll get back within one business day.</p>
-        <form id="contactForm" onsubmit="submitForm(event)">
-          <input type="text" id="name" placeholder="Full name" required />
-          <input type="email" id="email" placeholder="Email address" required />
-          <input type="text" id="subject" placeholder="Subject" />
-          <textarea id="message" placeholder="Message" rows="5" required></textarea>
-          <button type="submit">Send Message</button>
+        <!-- Plastic Scrap -->
+        <div class="scrap-card">
+          <div class="card-title">🔹 Plastic Scrap</div>
+          <div class="scrolling-images">
+            <div class="scrolling-images-inner">
+              <img src="images/PlasticScrap.jfif" alt="Plastic Scrap 1" class="modal-img">
+              <img src="images/PlasticScrap1.jfif" alt="Plastic Scrap 2" class="modal-img">
+              <img src="images/PlasticScrap2.jfif" alt="Plastic Scrap 3" class="modal-img">
+              <img src="images/PlasticScrap3.jfif" alt="Plastic Scrap 4" class="modal-img">
+              <img src="images/PlasticScrap4.jfif" alt="Plastic Scrap 5" class="modal-img">
+              <img src="images/PlasticScrap5.jfif" alt="Plastic Scrap 6" class="modal-img">
+            </div>
+          </div>
+          <p>Various types of recyclable plastics collected for reuse and industrial applications.</p>
+          <ul class="scrap-details">
+            <li>🏷️ Types: PET, HDPE, PVC, LDPE</li>
+            <li>⚡ Usage: Manufacturing, packaging, recycled products</li>
+            <li>✔️ Sorted by type and color for high-quality recycling</li>
+            <li>🌱 Environmentally responsible disposal</li>
+          </ul>
+        </div>
+
+        <!-- Electronic Scrap -->
+        <div class="scrap-card">
+          <div class="card-title">💻 Electronic Scrap</div>
+          <div class="scrolling-images">
+            <div class="scrolling-images-inner">
+              <img src="images/ElectronicScrap.jfif" alt="Electronic Scrap 1" class="modal-img">
+              <img src="images/ElectronicScrap1.jfif" alt="Electronic Scrap 2" class="modal-img">
+              <img src="images/ElectronicScrap2.jfif" alt="Electronic Scrap 3" class="modal-img">
+              <img src="images/ElectronicScrap3.jfif" alt="Electronic Scrap 4" class="modal-img">
+              <img src="images/ElectronicScrap4.jfif" alt="Electronic Scrap 5" class="modal-img">
+              <img src="images/ElectronicScrap5.jfif" alt="Electronic Scrap 6" class="modal-img">
+            </div>
+          </div>
+          <p>Collected electronic waste for safe recycling and resource recovery.</p>
+          <ul class="scrap-details">
+            <li>🏷️ Types: PCBs, wires, cables, circuit boards, batteries</li>
+            <li>⚡ Usage: Recycling centers, refurbishing electronic parts</li>
+            <li>✔️ Environmentally safe processing</li>
+            <li>🌱 Proper handling of hazardous components</li>
+          </ul>
+        </div>
+
+        <!-- Other Scrap Items -->
+        <div class="scrap-card">
+          <div class="card-title">📦 Other Scrap Items</div>
+          <div class="scrolling-images">
+            <div class="scrolling-images-inner">
+              <img src="images/OtherScrapItems.jfif" alt="Other Scrap 1" class="modal-img">
+              <img src="images/OtherScrapItems1.jfif" alt="Other Scrap 2" class="modal-img">
+              <img src="images/OtherScrapItems2.jfif" alt="Other Scrap 3" class="modal-img">
+              <img src="images/OtherScrapItems3.jfif" alt="Other Scrap 4" class="modal-img">
+              <img src="images/OtherScrapItems4.jfif" alt="Other Scrap 5" class="modal-img">
+              <img src="images/OtherScrapItems5.jfif" alt="Other Scrap 6" class="modal-img">
+            </div>
+          </div>
+          <p>Additional recyclable materials collected from industrial and commercial sources.</p>
+          <ul class="scrap-details">
+            <li>🟢 Includes wood scraps, rubber, cardboard, glass</li>
+            <li>⚡ Usage: Recycling, industrial processes, eco-friendly disposal</li>
+            <li>✔️ Sorted and categorized for efficiency</li>
+            <li>🌱 Supports sustainable and circular economy practices</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients -->
+  <section id="clients" class="section" style="background: #f0f8ff;">
+    <div class="container slide-in">
+      <div class="section-head" style="color:#0077b6;">🤝 Our Clients</div>
+      <p class="section-sub" style="color:#555;">Trusted by leading industries across Bahrain.</p>
+
+      <div class="clients-grid">
+        <!-- BAPCO Client -->
+        <div class="client-card">
+          <div class="client-badge">Oil & Gas</div>
+          <img src="images/Bapco.png" alt="BAPCO" class="client-logo">
+          <div class="client-name">BAPCO</div>
+          <p class="client-desc">Bahrain Petroleum Company (BAPCO) – Leading oil & gas producer in Bahrain. Partnered
+            for long-term industrial supply solutions.</p>
+        </div>
+
+        <!-- MILDA -->
+        <div class="client-card">
+          <div class="client-badge">Manufacturing</div>
+          <img src="images/nologoclients.png" alt="MILDA" class="client-logo">
+          <div class="client-name">MILDA</div>
+          <p class="client-desc">MILDA – Prominent manufacturing company in Bahrain. We supply materials that support
+            efficient production and storage.</p>
+        </div>
+
+        <!-- GPIC -->
+        <div class="client-card">
+          <div class="client-badge">Petrochemical</div>
+          <img src="images/nologoclients.png" alt="GPIC" class="client-logo">
+          <div class="client-name">GPIC</div>
+          <p class="client-desc">Gulf Petrochemical Industries Company (GPIC) – Leading petrochemical company requiring
+            high-quality industrial supplies.</p>
+        </div>
+
+        <!-- Alba -->
+        <div class="client-card">
+          <div class="client-badge">Aluminum</div>
+          <img src="images/nologoclients.png" alt="Alba" class="client-logo">
+          <div class="client-name">Alba</div>
+          <p class="client-desc">Aluminium Bahrain (Alba) – Major aluminum producer in the region. We provide reliable
+            logistics and material support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="contact-container">
+
+      <!-- LEFT CONTACT CARD -->
+      <div class="contact-card contact-card-left">
+        <div class="company-header">
+          <img src="images/farzanatransparentlogo.png" class="company-logo">
+          <h2>Farzana Trading W.L.L</h2>
+        </div>
+
+        <div class="contact-details">
+          <h3>📞 Contact Details</h3>
+          <p><span class="icon">📧</span> info@farzanatrading.com</p>
+          <p><span class="icon">📱</span> +973 0000 0000</p>
+        </div>
+
+        <div class="working-hours">
+          <h3>🕒 Working Hours</h3>
+          <p><span class="icon">📅</span> Sunday – Thursday</p>
+          <p><span class="icon">⏰</span> 8:00 AM – 6:00 PM</p>
+          <p><span class="icon">🚫</span> Friday & Saturday Closed</p>
+        </div>
+
+        <form class="contact-form">
+          <h3>✉ Send Us a Message</h3>
+          <input type="text" placeholder="Your Name">
+          <input type="email" placeholder="Your Email">
+          <textarea rows="4" placeholder="Message"></textarea>
+          <button type="submit" class="send-btn">Send Message</button>
         </form>
       </div>
 
-      <aside class="glass">
-        <h4>Map & Location</h4>
-        <p class="muted">Main Office — Manama, Bahrain</p>
-        <!-- Replace with your real Google Maps embed URL with API / embed link -->
-        <div style="border-radius:12px;overflow:hidden;margin-top:10px;">
-          <iframe title="Farzana Trading Location" src="https://www.google.com/maps?q=Manama+Bahrain&output=embed" width="100%" height="260" frameborder="0" style="border:0"></iframe>
+      <!-- RIGHT CONTACT CARD -->
+      <div class="contact-card contact-card-right">
+        <h3 class="map-title">📍 Find Us on Map</h3>
+
+          <iframe class="map-frame"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.793635828943!2d50.58527241500001!3d26.233923983361513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49c6074c8d2c33%3A0x353b529f9fdb9c31!2sManama%20Bus%20Stand!5e0!3m2!1sen!2sbh!4v1700351965985!5m2!1sen!2sbh"
+    width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy">
+  </iframe>
+
+        <div class="contact-address-box">
+          <h4>🏢 Office Address</h4>
+          <p>Road 1234, Block 000, Manama, Kingdom of Bahrain</p>
         </div>
-
-        <div style="margin-top:12px">
-          <strong>Phone</strong>
-          <div class="muted">+973 3XX XXXX</div>
-          <strong style="margin-top:8px;display:block">Email</strong>
-          <div class="muted">info@farzanatrading.com</div>
-        </div>
-
-      </aside>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="footer-grid">
-      <div>
-        <h4>Farzana Trading</h4>
-        <p class="muted">Supplier of pallets, cables, building materials and scrap solutions. Serving BAPCO, Milda and other major clients.</p>
       </div>
-      <div>
-        <h4>Quick Links</h4>
-        <ul class="muted">
-          <li><a href="#products">Products</a></li>
-          <li><a href="#clients">Clients</a></li>
-          <li><a href="#about">About</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Connect</h4>
-        <p class="muted">Follow us on our business accounts for stock updates and offers.</p>
-      </div>
+
     </div>
-    <div style="max-width:1200px;margin:18px auto 0;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center">
-      <div>© Farzana Trading — All rights reserved.</div>
-      <div class="muted">Designed with care · Bahrain</div>
+  </section>
+  <!-- Thin Light Footer -->
+  <footer class="footer-light">
+    <div class="footer-light-container">
+      <div class="footer-left">
+        <span>© 2025 Farzana Trading W.L.L</span>
+        <span> | Created by HR INFO</span>
+      </div>
+      <div class="footer-right">
+        <a href="mailto:info@farzanatrading.com">✉ info@farzanatrading.com</a>
+        <a href="tel:+97300000000">📞 +973 0000 0000</a>
+      </div>
     </div>
   </footer>
-
-  <script>
-    // Simple interactivity: filtering and search
-    function filterItem(cat){
-      const cards = document.querySelectorAll('#productGrid .card');
-      if(cat==='all'){
-        cards.forEach(c=>c.style.display='block');
-      } else {
-        cards.forEach(c=> c.dataset.cat===cat ? c.style.display='block' : c.style.display='none');
-      }
-      // small smooth scroll to products
-      document.getElementById('products').scrollIntoView({behavior:'smooth'});
-    }
-
-    function showCategory(cat){
-      filterItem(cat);
-    }
-
-    function performSearch(){
-      const q = document.getElementById('searchInput').value.trim().toLowerCase();
-      const cards = document.querySelectorAll('#productGrid .card');
-      if(!q){cards.forEach(c=>c.style.display='block');return}
-      cards.forEach(c=>{
-        const t = (c.querySelector('h4').innerText + ' ' + (c.querySelector('p')?.innerText||'') + ' ' + (c.querySelector('.meta')?.innerText||'')).toLowerCase();
-        c.style.display = t.includes(q) ? 'block' : 'none';
-      })
-      document.getElementById('products').scrollIntoView({behavior:'smooth'});
-    }
-
-    function submitForm(e){
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      alert('Thanks '+name+'! Your message was received — we will contact you shortly.');
-      e.target.reset();
-    }
-
-    // Mobile menu (simple toggle) - left as basic because navlinks hidden on small screens
-    function toggleMobileMenu(){
-      const nav = document.querySelector('.navlinks');
-      if(nav.style.display==='flex') nav.style.display='none'; else nav.style.display='flex';
-      nav.style.flexDirection='column';nav.style.position='absolute';nav.style.right='18px';nav.style.top='82px';nav.style.background='white';nav.style.padding='12px';nav.style.borderRadius='12px';
-    }
-
-    // Tiny entrance animation for cards
-    document.addEventListener('DOMContentLoaded', ()=>{
-      const cards = document.querySelectorAll('.card');
-      cards.forEach((c,i)=>{c.style.opacity=0;c.style.transform='translateY(8px)';setTimeout(()=>{c.style.transition='all .45s cubic-bezier(.2,.9,.2,1)';c.style.opacity=1;c.style.transform='translateY(0)';}, 80*i)});
-    });
-  </script>
+  <!-- Modern Modal -->
+  <div id="imgModal" class="modal">
+    <div class="modal-wrapper">
+      <div class="modal-header">
+        <span class="modal-title">Farzana Trading W.L.L</span>
+        <span class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+        <img class="modal-content" id="modalImg" alt="Preview">
+      </div>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
 </body>
 </html>
