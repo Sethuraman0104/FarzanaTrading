@@ -480,6 +480,227 @@ a{text-decoration:none;color:inherit;}
   .hero-content p { font-size: 1rem; }
   .card-item { padding: 12px 18px; font-size: 0.9rem; }
 }
+
+       .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .client-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 25px 20px 30px;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0, 123, 255, 0.1);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .client-card::before {
+      content: '';
+      position: absolute;
+      top: -60%;
+      left: -60%;
+      width: 220%;
+      height: 220%;
+      background: radial-gradient(circle at center, rgba(0, 123, 255, 0.08), transparent 70%);
+      transform: rotate(45deg);
+      transition: all 0.6s ease;
+    }
+
+    .client-card:hover::before {
+      top: -30%;
+      left: -30%;
+      transform: rotate(0deg);
+    }
+
+    .client-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 45px rgba(0, 123, 255, 0.2);
+    }
+
+    .client-logo {
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+      margin-bottom: 15px;
+      border-radius: 50%;
+      background: #e6f0fa;
+      padding: 10px;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .client-card:hover .client-logo {
+      transform: scale(1.15);
+      box-shadow: 0 0 15px rgba(0,123,255,0.4);
+    }
+
+    .client-name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #0077b6;
+      margin-bottom: 6px;
+      transition: color 0.3s ease;
+    }
+
+    .client-desc {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.4;
+      margin-top: 5px;
+    }
+
+    .client-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #0077b6;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      box-shadow: 0 2px 8px rgba(0,123,255,0.2);
+    }
+
+    @media (max-width: 768px) {
+      .client-logo {
+        width: 70px;
+        height: 70px;
+      }
+      .client-card {
+        padding: 20px 15px 25px;
+      }
+    }
+        .scrap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .scrap-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 12px 30px rgba(0,123,255,0.08);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .scrap-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0,123,255,0.15);
+    }
+
+    .card-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      color: #0077b6;
+    }
+
+    .scrolling-images {
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      cursor: pointer;
+    }
+
+    .scrolling-images-inner {
+      display: flex;
+      gap: 10px;
+      animation: scroll-left 20s linear infinite;
+    }
+
+    .scrap-card:hover .scrolling-images-inner {
+      animation-play-state: paused;
+    }
+
+    .scrolling-images-inner img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.5s ease;
+    }
+
+    .scrap-card:hover .scrolling-images-inner img {
+      transform: scale(1.1);
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .scrap-details {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 10px;
+    }
+
+    .scrap-details li {
+      background: #e6f0fa;
+      padding: 8px 12px;
+      border-radius: 8px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: #0077b6;
+    }
+
+    @media (max-width: 768px) {
+      .scrolling-images-inner img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,123,255,0.3);
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .close:hover {
+      color: #00cfff;
+    }
 </style>
 </head>
 
@@ -1024,17 +1245,145 @@ a{text-decoration:none;color:inherit;}
   </div>
 </section>
 
+<!-- Scrap Items -->
+<section id="scraps" class="section">
+  <div class="container slide-in">
+    <div class="section-head" style="color:#0077b6;">♻️ Scrap Items Collection</div>
+    <p class="section-sub" style="color:#555;">
+      Farzana Trading offers a wide range of scrap materials suitable for recycling, industrial, and manufacturing purposes. 
+      Explore Metal Scrap, Plastic Scrap, Electronic Scrap, and other recyclable materials below.
+    </p>
+
+    <div class="scrap-grid">
+      <!-- Metal Scrap -->
+      <div class="scrap-card">
+        <div class="card-title">🛠️ Metal Scrap</div>
+        <div class="scrolling-images">
+          <div class="scrolling-images-inner">
+            <img src="images/MetalScrap.jfif" alt="Metal Scrap 1" class="modal-img">
+            <img src="images/MetalScrap1.jfif" alt="Metal Scrap 2" class="modal-img">
+            <img src="images/MetalScrap2.jfif" alt="Metal Scrap 3" class="modal-img">
+            <img src="images/MetalScrap3.jfif" alt="Metal Scrap 4" class="modal-img">
+            <img src="images/MetalScrap4.jfif" alt="Metal Scrap 5" class="modal-img">
+            <img src="images/MetalScrap5.jfif" alt="Metal Scrap 6" class="modal-img">
+          </div>
+        </div>
+        <p>Ferrous and non-ferrous metal scrap collected for recycling and industrial use.</p>
+        <ul class="scrap-details">
+          <li>🟢 Types: Iron, Steel, Aluminum, Copper</li>
+          <li>⚡ Usage: Recycling plants, foundries, industrial manufacturing</li>
+          <li>✔️ Sorted and graded for quality and purity</li>
+          <li>🌱 Eco-friendly and sustainable material source</li>
+        </ul>
+      </div>
+
+      <!-- Plastic Scrap -->
+      <div class="scrap-card">
+        <div class="card-title">🔹 Plastic Scrap</div>
+        <div class="scrolling-images">
+          <div class="scrolling-images-inner">
+            <img src="images/PlasticScrap.jfif" alt="Plastic Scrap 1" class="modal-img">
+            <img src="images/PlasticScrap1.jfif" alt="Plastic Scrap 2" class="modal-img">
+            <img src="images/PlasticScrap2.jfif" alt="Plastic Scrap 3" class="modal-img">
+            <img src="images/PlasticScrap3.jfif" alt="Plastic Scrap 4" class="modal-img">
+            <img src="images/PlasticScrap4.jfif" alt="Plastic Scrap 5" class="modal-img">
+            <img src="images/PlasticScrap5.jfif" alt="Plastic Scrap 6" class="modal-img">
+          </div>
+        </div>
+        <p>Various types of recyclable plastics collected for reuse and industrial applications.</p>
+        <ul class="scrap-details">
+          <li>🟢 Types: PET, HDPE, PVC, LDPE</li>
+          <li>⚡ Usage: Manufacturing, packaging, recycled products</li>
+          <li>✔️ Sorted by type and color for high-quality recycling</li>
+          <li>🌱 Environmentally responsible disposal</li>
+        </ul>
+      </div>
+
+      <!-- Electronic Scrap -->
+      <div class="scrap-card">
+        <div class="card-title">💻 Electronic Scrap</div>
+        <div class="scrolling-images">
+          <div class="scrolling-images-inner">
+            <img src="images/ElectronicScrap.jfif" alt="Electronic Scrap 1" class="modal-img">
+            <img src="images/ElectronicScrap1.jfif" alt="Electronic Scrap 2" class="modal-img">
+            <img src="images/ElectronicScrap2.jfif" alt="Electronic Scrap 3" class="modal-img">
+            <img src="images/ElectronicScrap3.jfif" alt="Electronic Scrap 4" class="modal-img">
+            <img src="images/ElectronicScrap4.jfif" alt="Electronic Scrap 5" class="modal-img">
+            <img src="images/ElectronicScrap5.jfif" alt="Electronic Scrap 6" class="modal-img">
+          </div>
+        </div>
+        <p>Collected electronic waste for safe recycling and resource recovery.</p>
+        <ul class="scrap-details">
+          <li>🟢 Types: PCBs, wires, cables, circuit boards, batteries</li>
+          <li>⚡ Usage: Recycling centers, refurbishing electronic parts</li>
+          <li>✔️ Environmentally safe processing</li>
+          <li>🌱 Proper handling of hazardous components</li>
+        </ul>
+      </div>
+
+      <!-- Other Scrap Items -->
+      <div class="scrap-card">
+        <div class="card-title">📦 Other Scrap Items</div>
+        <div class="scrolling-images">
+          <div class="scrolling-images-inner">
+            <img src="images/OtherScrapItems.jfif" alt="Other Scrap 1" class="modal-img">
+            <img src="images/OtherScrapItems1.jfif" alt="Other Scrap 2" class="modal-img">
+            <img src="images/OtherScrapItems2.jfif" alt="Other Scrap 3" class="modal-img">
+            <img src="images/OtherScrapItems3.jfif" alt="Other Scrap 4" class="modal-img">
+            <img src="images/OtherScrapItems4.jfif" alt="Other Scrap 5" class="modal-img">
+            <img src="images/OtherScrapItems5.jfif" alt="Other Scrap 6" class="modal-img">
+          </div>
+        </div>
+        <p>Additional recyclable materials collected from industrial and commercial sources.</p>
+        <ul class="scrap-details">
+          <li>🟢 Includes wood scraps, rubber, cardboard, glass</li>
+          <li>⚡ Usage: Recycling, industrial processes, eco-friendly disposal</li>
+          <li>✔️ Sorted and categorized for efficiency</li>
+          <li>🌱 Supports sustainable and circular economy practices</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Clients -->
-<section id="clients" class="section">
+<section id="clients" class="section" style="background: #f0f8ff;">
   <div class="container slide-in">
-    <div class="section-head">🤝 Our Clients</div>
-    <p class="section-sub">Trusted by leading industries across Bahrain.</p>
-    <div class="cards-grid">
-      <div class="card">BAPCO - Oil & Gas</div>
-      <div class="card">MILDA - Manufacturing</div>
-      <div class="card">GPIC - Petrochemical</div>
-      <div class="card">Alba - Aluminum</div>
+    <div class="section-head" style="color:#0077b6;">🤝 Our Clients</div>
+    <p class="section-sub" style="color:#555;">Trusted by leading industries across Bahrain.</p>
+
+    <div class="clients-grid">
+      <!-- BAPCO Client -->
+      <div class="client-card">
+        <div class="client-badge">Oil & Gas</div>
+        <img src="images/Bapco.png" alt="BAPCO" class="client-logo">
+        <div class="client-name">BAPCO</div>
+        <p class="client-desc">Bahrain Petroleum Company (BAPCO) – Leading oil & gas producer in Bahrain. Partnered for long-term industrial supply solutions.</p>
+      </div>
+
+      <!-- MILDA -->
+      <div class="client-card">
+        <div class="client-badge">Manufacturing</div>
+        <img src="images/nologoclients.png" alt="MILDA" class="client-logo">
+        <div class="client-name">MILDA</div>
+        <p class="client-desc">MILDA – Prominent manufacturing company in Bahrain. We supply materials that support efficient production and storage.</p>
+      </div>
+
+      <!-- GPIC -->
+      <div class="client-card">
+        <div class="client-badge">Petrochemical</div>
+        <img src="images/nologoclients.png" alt="GPIC" class="client-logo">
+        <div class="client-name">GPIC</div>
+        <p class="client-desc">Gulf Petrochemical Industries Company (GPIC) – Leading petrochemical company requiring high-quality industrial supplies.</p>
+      </div>
+
+      <!-- Alba -->
+      <div class="client-card">
+        <div class="client-badge">Aluminum</div>
+        <img src="images/nologoclients.png" alt="Alba" class="client-logo">
+        <div class="client-name">Alba</div>
+        <p class="client-desc">Aluminium Bahrain (Alba) – Major aluminum producer in the region. We provide reliable logistics and material support.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1063,6 +1412,12 @@ a{text-decoration:none;color:inherit;}
 <footer class="footer">
   <p>© 2025 Farzana Trading. All Rights Reserved.</p>
 </footer>
+
+ <!-- Modal Popup -->
+  <div id="imgModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+  </div>
 
 <script>
 // Slide-in animation
@@ -1098,6 +1453,26 @@ function typeLogo(){
   setTimeout(typeLogo,150);
 }
 window.addEventListener('load', typeLogo);
+
+const modal = document.getElementById('imgModal');
+    const modalImg = document.getElementById('modalImg');
+
+    document.querySelectorAll('.modal-img').forEach(img => {
+      img.addEventListener('click', () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+      });
+    });
+
+    document.querySelector('.close').onclick = function() {
+      modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
 </script>
 </body>
 </html>
