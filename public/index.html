@@ -1,44 +1,57 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Farzana Trading W.L.L</title>
-  <meta name="description" content="Farzana Trading — Supplier of pallets, cables, building materials and scrap services in Bahrain. Professional, light glossy design with animations." />
+  <meta name="description"
+    content="Farzana Trading — Supplier of pallets, cables, building materials and scrap services in Bahrain. Professional, light glossy design with animations." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet"/>
-    <!-- Favicon / Tab Bar Icon -->
+  <link href="css/styles.css" rel="stylesheet" />
+  <!-- Favicon / Tab Bar Icon -->
   <link rel="icon" type="image/png" href="images/farzanatransparentlogo.png" sizes="32x32">
   <link rel="icon" type="image/png" href="images/farzanatransparentlogo.png" sizes="16x16">
 </head>
+
 <body>
   <!-- Scroll to Top Button -->
-<button id="scrollTopBtn" title="Go to top">🔝</button>
+  <button id="scrollTopBtn" title="Go to top">🔝</button>
   <header class="site-header">
-    <div class="header-inner">
-      <!-- Logo -->
-<div class="logo" id="logo">
-  <div class="logo-wrapper">
-    <img src="images/farzanatransparentlogo.png" alt="Farzana Trading">
-  </div>
-  <span id="logo-text" class="logo-text">Farzana Trading W.L.L</span>
-</div>
-
-      <!-- Hamburger Toggle -->
-      <div class="nav-toggle">☰</div>
-
-      <!-- Wire Menu -->
-      <nav class="main-nav wire-menu">
-        <a href="#pallets" class="wire-node">📦 Pallets</a>
-        <a href="#cables" class="wire-node">🔌 Cables</a>
-        <a href="#scraps" class="wire-node">♻️ Scraps</a>
-        <a href="#materials" class="wire-node">🏗️ Materials</a>
-        <a href="#clients" class="wire-node">🤝 Clients</a>
-        <a href="#about" class="wire-node">📘 About</a>
-        <a href="#contact" class="wire-node">📍 Contact</a>
-      </nav>
+  <div class="header-inner">
+    <!-- Logo -->
+    <div class="logo" id="logo">
+      <div class="logo-wrapper">
+        <img src="images/farzanatransparentlogo.png" alt="Farzana Trading">
+      </div>
+      <span id="logo-text" class="logo-text">Farzana Trading W.L.L</span>
     </div>
-  </header>
+
+    <!-- Hamburger Toggle -->
+    <div class="nav-toggle">☰</div>
+
+    <!-- Wire Menu -->
+    <nav class="main-nav wire-menu">
+      <a href="#about" class="wire-node">📘 About Us</a>
+
+      <!-- Dropdown -->
+      <div class="wire-node dropdown">
+        🏗️ Our Products
+        <div class="dropdown-content">
+          <a href="#steel">🛠️ Steel</a>
+          <a href="#cables">⚡ Cables</a>
+          <a href="#scraps">♻️ Scrap (Woods & Steel)</a>
+          <a href="#pallets">🪵 Wood Pallets</a>
+          <a href="#wholesale">📦 Wholesale Items</a>
+        </div>
+      </div>
+
+      <a href="#white-wood-treatment" class="wire-node">🧴 White Wood Treatment</a>
+      <a href="#clients" class="wire-node">🤝 Our Clients</a>
+      <a href="#contact" class="wire-node">📍 Contact Us</a>
+    </nav>
+  </div>
+</header>
 
   <!-- Hero -->
   <section class="hero">
@@ -51,614 +64,295 @@
       <button class="btn primary" onclick="location.href='#contact'">Get in Touch</button>
 
       <!-- Scrolling Animated Cards -->
-      <div class="scrolling-cards-wrapper">
-        <div class="scrolling-cards">
-          <div class="card-item">♻️ Scrap Items</div>
-          <div class="card-item">🪵 Wood Pallets</div>
-          <div class="card-item">🛠️ Steel Pallets</div>
-          <div class="card-item">🔌 Wires</div>
-          <div class="card-item">⚡ Cables</div>
-          <div class="card-item">🏗️ Cement</div>
-          <div class="card-item">🏗️ Blocks</div>
-          <div class="card-item">🏗️ Pipes</div>
-          <div class="card-item">🎨 Paints</div>
-          <div class="card-item">💡 Switches</div>
-          <div class="card-item">🧰 Equipments</div>
-          <!-- Repeat for smooth continuous scroll -->
-          <div class="card-item">♻️ Scrap Items</div>
-          <div class="card-item">🪵 Wood Pallets</div>
-          <div class="card-item">🛠️ Steel Pallets</div>
-          <div class="card-item">🔌 Wires</div>
-          <div class="card-item">⚡ Cables</div>
-          <div class="card-item">🏗️ Cement</div>
-          <div class="card-item">🏗️ Blocks</div>
-          <div class="card-item">🏗️ Pipes</div>
-          <div class="card-item">🎨 Paints</div>
-          <div class="card-item">💡 Switches</div>
-          <div class="card-item">🧰 Equipments</div>
-        </div>
-      </div>
+<div class="scrolling-cards-wrapper">
+  <div class="scrolling-cards">
+    <!-- Scrap Items -->
+    <div class="card-item">♻️ Scrap Items</div>
+    <div class="card-item">♻️ Scrap (Woods & Steel)</div>
+    <!-- Wood Pallets -->
+    <div class="card-item">🪵 Wood Pallets</div>
+    <!-- Steel -->
+    <div class="card-item">🛠️ Steel</div>
+    <!-- Cables -->
+    <div class="card-item">⚡ Cables</div>
+    <!-- Fungs Removal for White Wood - White Wood Treatment -->
+    <div class="card-item">🧴 White Wood Treatment</div>
+    <!-- Wholesale Items - (Wood, Steel & Hardwood) -->
+    <div class="card-item">🏷️ Wholesale Items - Wood</div>
+    <div class="card-item">🏷️ Wholesale Items - Steel</div>
+    <div class="card-item">🏷️ Wholesale Items - Hardwood</div>
+    <!-- Repeat for smooth continuous scroll -->
+    <div class="card-item">♻️ Scrap Items</div>
+    <div class="card-item">♻️ Scrap (Woods & Steel)</div>
+    <div class="card-item">🪵 Wood Pallets</div>
+    <div class="card-item">🛠️ Steel</div>
+    <div class="card-item">⚡ Cables</div>
+    <div class="card-item">🧴 White Wood Treatment</div>
+    <div class="card-item">🏷️ Wholesale Items - Wood</div>
+    <div class="card-item">🏷️ Wholesale Items - Steel</div>
+    <div class="card-item">🏷️ Wholesale Items - Hardwood</div>
+  </div>
+</div>
+
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="section">
-    <div class="container slide-in">
-      <div class="section-head">📘 About Us</div>
-      <p class="section-sub">
-        Farzana Trading W.L.L is a leading distributor of industrial goods and construction materials in Bahrain.
-        With over a decade of experience, we pride ourselves on delivering top-quality products and unmatched customer
-        service to
-        manufacturing, construction, and petrochemical sectors. Our goal is to ensure that every client receives timely,
-        cost-effective, and reliable solutions for all their industrial material needs.
-      </p>
+<section id="about" class="section">
+  <div class="container slide-in">
+    <div class="section-head">📘 About Us</div>
+    <p class="section-sub">
+      Farzana Trading W.L.L is a leading supplier of industrial, construction, and recyclable materials in Bahrain.  
+      We specialize in Steel, Cables, Wood Pallets, Scrap (Woods & Steel), White Wood Treatment, and Wholesale Items.  
+      With over a decade of experience, we provide timely, reliable, and cost-effective solutions to manufacturing, construction, and industrial clients, ensuring the highest quality standards in all products and services.
+    </p>
 
-      <div class="cards-grid">
-        <!-- Vision -->
-        <div class="card glow-card">
-          <div class="card-title"><span class="card-icon">🎯</span> Vision</div>
-          <p>
-            To be Bahrain’s most trusted and customer-centric trading partner, recognized for our dedication,
-            integrity, and excellence in supplying high-quality industrial and building materials.
-          </p>
-        </div>
+    <div class="cards-grid">
+      <!-- Vision -->
+      <div class="card glow-card">
+        <div class="card-title"><span class="card-icon">🎯</span> Vision</div>
+        <p>
+          To be Bahrain’s most trusted provider of industrial and construction materials, recognized for quality, reliability, and a wide range of solutions including Steel, Cables, Wood Pallets, Scrap, and Wholesale Items.
+        </p>
+      </div>
 
-        <!-- Mission -->
-        <div class="card glow-card">
-          <div class="card-title"><span class="card-icon">🚀</span> Mission</div>
-          <p>
-            Deliver superior industrial materials and services with a commitment to quality, timely delivery,
-            competitive pricing, and fostering long-term partnerships with our clients.
-          </p>
-        </div>
+      <!-- Mission -->
+      <div class="card glow-card">
+        <div class="card-title"><span class="card-icon">🚀</span> Mission</div>
+        <p>
+          Deliver superior industrial and construction materials, including Steel, Cables, Scrap, and Wood Products, with a commitment to quality, timely delivery, competitive pricing, and building long-term partnerships with clients.
+        </p>
+      </div>
 
-        <!-- Values -->
-        <div class="card glow-card">
-          <div class="card-title"><span class="card-icon">💡</span> Values</div>
-          <p>
-            We operate with transparency, professionalism, and sustainability in mind. Our core values include
-            reliability, innovation, and continuous improvement to meet evolving client needs.
-          </p>
-        </div>
+      <!-- Values -->
+      <div class="card glow-card">
+        <div class="card-title"><span class="card-icon">💡</span> Values</div>
+        <p>
+          We operate with transparency, professionalism, and sustainability. Our values include reliability, innovation, eco-friendly practices, and continuous improvement to meet the evolving needs of our clients and the industries we serve.
+        </p>
+      </div>
 
-        <!-- Reach -->
-        <div class="card glow-card">
-          <div class="card-title"><span class="card-icon">🌐</span> Reach</div>
-          <p>
-            Serving multiple sectors across Bahrain, Farzana Trading ensures that every industrial and construction
-            project has access to premium materials delivered efficiently and securely.
-          </p>
-        </div>
+      <!-- Reach -->
+      <div class="card glow-card">
+        <div class="card-title"><span class="card-icon">🌐</span> Reach</div>
+        <p>
+          Serving multiple sectors across Bahrain, Farzana Trading ensures that construction, manufacturing, and industrial projects have access to premium materials including Steel, Cables, Scrap, Wood Pallets, and Wholesale Items, delivered efficiently and securely.
+        </p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Pallets -->
-  <section id="pallets" class="section">
-    <div class="container slide-in">
-      <div class="section-head">📦 Pallets Collection</div>
-      <p class="section-sub">
-        We provide high-quality pallets suitable for all industrial and commercial applications. Explore our Wood and
-        Steel Pallets below.
-      </p>
+  <!-- Company Products -->
+<section id="products" class="section">
+  <div class="container slide-in">
+    <div class="section-head">📦 Our Products</div>
+    <p class="section-sub">
+      Farzana Trading offers a wide range of industrial and construction materials, focusing on high-quality, durable, and reliable products to meet all your project needs.
+    </p>
 
-      <div class="scrap-grid">
-        <!-- Wood Pallets -->
-        <div class="scrap-card">
-          <div class="card-title"><span class="card-icon">🪵</span> Wood Pallets</div>
-
-          <!-- Auto-scroll images -->
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
-              <img src="images/pallets.jfif" alt="Wood Pallet 1" class="modal-img">
-              <img src="images/pallets1.jfif" alt="Wood Pallet 2" class="modal-img">
-              <img src="images/pallets2.jfif" alt="Wood Pallet 3" class="modal-img">
-              <!-- Repeat for smooth scroll -->
-              <img src="images/pallets3.jfif" alt="Wood Pallet 4" class="modal-img">
-              <img src="images/pallets4.jfif" alt="Wood Pallet 5" class="modal-img">
-              <img src="images/pallets5.jfif" alt="Wood Pallet 6" class="modal-img">
-            </div>
+    <div class="scrap-grid">
+      <!-- Steel -->
+      <div class="scrap-card">
+        <div class="card-title" id="steel">🛠️ Steel</div>
+        <div class="slider-container scrap-slider">
+          <div class="slides">
+            <img src="images/Steel.jfif" alt="Steel 1" class="modal-img">
+            <img src="images/Steel1.jfif" alt="Steel 2" class="modal-img">
+            <img src="images/Steel2.jfif" alt="Steel 3" class="modal-img">
+            <img src="images/Steel3.jfif" alt="Steel 4" class="modal-img">
+            <img src="images/Steel4.jfif" alt="Steel 5" class="modal-img">
+            <img src="images/Steel5.jfif" alt="Steel 6" class="modal-img">
           </div>
-
-          <p>
-            Durable wooden pallets designed to withstand heavy loads and frequent handling.
-          </p>
-          <ul class="scrap-details">
-            <li>📦 Available Sizes: 800x1200 mm, 1000x1200 mm, 1200x1200 mm</li>
-            <li>⚡ Usage: Material storage, transportation, warehouse stacking</li>
-            <li>⭐ Made from premium timber for long-lasting durability</li>
-            <li>🌱 Eco-friendly and recyclable</li>
-          </ul>
+          <span class="prev scrap-prev">&#10094;</span>
+          <span class="next scrap-next">&#10095;</span>
+          <div class="slider-dots"></div>
         </div>
+        <p>High-quality steel for industrial, construction, and manufacturing applications.</p>
+      </div>
 
-        <!-- Steel Pallets -->
-        <div class="scrap-card">
-          <div class="card-title"><span class="card-icon">🔩</span> Steel Pallets</div>
-
-          <!-- Auto-scroll images -->
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
-              <img src="images/steelpallets.jfif" alt="Steel Pallet 1" class="modal-img">
-              <img src="images/steelpallets1.jfif" alt="Steel Pallet 2" class="modal-img">
-              <img src="images/steelpallets2.jfif" alt="Steel Pallet 3" class="modal-img">
-              <!-- Repeat for smooth scroll -->
-              <img src="images/steelpallets3.jfif" alt="Steel Pallet 4" class="modal-img">
-              <img src="images/steelpallets4.jfif" alt="Steel Pallet 5" class="modal-img">
-            </div>
+      <!-- Cables -->
+      <div class="scrap-card">
+        <div class="card-title" id="cables">⚡ Cables</div>
+        <div class="slider-container scrap-slider">
+          <div class="slides">
+            <img src="images/Cables.jfif" alt="Cable 1" class="modal-img">
+            <img src="images/Cables1.jfif" alt="Cable 2" class="modal-img">
+            <img src="images/Cables2.jfif" alt="Cable 3" class="modal-img">
+            <img src="images/AluminumCables.jfif" alt="Cable 4" class="modal-img">
+            <img src="images/AluminumCables3.jfif" alt="Cable 5" class="modal-img">
+            <img src="images/AluminumCables2.jfif" alt="Cable 6" class="modal-img">
           </div>
-
-          <p>
-            Heavy-duty steel pallets for long-term industrial usage and maximum load support.
-          </p>
-          <ul class="scrap-details">
-            <li>📦 Available Sizes: 1000x1200 mm, 1200x1200 mm, 1200x1400 mm</li>
-            <li>⚡ Usage: Industrial warehouses, export shipping, heavy equipment transport</li>
-            <li>⭐ Corrosion-resistant steel with reinforced structure</li>
-            <li>💫 Durable and reusable for multiple years</li>
-          </ul>
+          <span class="prev scrap-prev">&#10094;</span>
+          <span class="next scrap-next">&#10095;</span>
+          <div class="slider-dots"></div>
         </div>
+        <p>Industrial-grade cables suitable for various electrical and construction applications.</p>
+      </div>
+
+      <!-- Scrap (Woods & Steel) -->
+      <div class="scrap-card">
+        <div class="card-title" id="scraps">♻️ Scrap (Woods & Steel)</div>
+        <div class="slider-container scrap-slider">
+          <div class="slides">
+            <img src="images/MetalScrap.jfif" alt="Scrap 1" class="modal-img">
+            <img src="images/MetalScrap2.jfif" alt="Scrap 2" class="modal-img">
+            <img src="images/MetalScrap4.jfif" alt="Scrap 3" class="modal-img">
+            <img src="images/woodscrap.jfif" alt="Scrap 4" class="modal-img">
+            <img src="images/woodscrap1.jfif" alt="Scrap 5" class="modal-img">
+          </div>
+          <span class="prev scrap-prev">&#10094;</span>
+          <span class="next scrap-next">&#10095;</span>
+          <div class="slider-dots"></div>
+        </div>
+        <p>Recyclable wood and steel scraps for various industrial and craft purposes.</p>
+      </div>
+
+      <!-- Wood Pallets -->
+      <div class="scrap-card">
+        <div class="card-title" id="pallets">🪵 Wood Pallets</div>
+        <div class="slider-container scrap-slider">
+          <div class="slides">
+            <img src="images/pallets.jfif" alt="Wood Pallet 1" class="modal-img">
+            <img src="images/Pallets1.jfif" alt="Wood Pallet 2" class="modal-img">
+            <img src="images/Pallets2.jfif" alt="Wood Pallet 3" class="modal-img">
+            <img src="images/Pallets3.jfif" alt="Wood Pallet 4" class="modal-img">
+            <img src="images/Pallets4.jfif" alt="Wood Pallet 5" class="modal-img">
+            <img src="images/Pallets5.jfif" alt="Wood Pallet 6" class="modal-img">
+          </div>
+          <span class="prev scrap-prev">&#10094;</span>
+          <span class="next scrap-next">&#10095;</span>
+          <div class="slider-dots"></div>
+        </div>
+        <p>Durable wooden pallets for storage, transport, and industrial use.</p>
+      </div>
+
+      <!-- Fungs Removal for White Wood -->
+      <div class="scrap-card">
+        <div class="card-title">🧹 Fungs Removal / White Wood Treatment</div>
+        <div class="slider-container scrap-slider">
+          <div class="slides">
+            <img src="images/whitewood.jfif" alt="White Wood Treatment 1" class="modal-img">
+            <img src="images/whitewood1.jfif" alt="White Wood Treatment 2" class="modal-img">
+            <img src="images/whitewood2.jfif" alt="White Wood Treatment 3" class="modal-img">
+            <img src="images/whitewood3.jfif" alt="White Wood Treatment 4" class="modal-img">
+            <img src="images/whitewood4.jfif" alt="White Wood Treatment 5" class="modal-img">
+            <img src="images/whitewood5.jfif" alt="White Wood Treatment 6" class="modal-img">
+          </div>
+          <span class="prev scrap-prev">&#10094;</span>
+          <span class="next scrap-next">&#10095;</span>
+          <div class="slider-dots"></div>
+        </div>
+        <p>Professional treatment to remove fungus and protect white wood for long-term durability.</p>
+      </div>
+
+      <!-- Wholesale Items -->
+      <div class="scrap-card">
+        <div class="card-title" id="wholesale">📦 Wholesale Items</div>
+        <div class="slider-container scrap-slider">
+          <div class="slides">
+            <img src="images/WholesaleItems.jfif" alt="Wholesale Item 1" class="modal-img">
+            <img src="images/WholesaleItems1.jfif" alt="Wholesale Item 2" class="modal-img">
+            <img src="images/WholesaleItems2.jfif" alt="Wholesale Item 3" class="modal-img">
+            <img src="images/WholesaleItems3.jfif" alt="Wholesale Item 4" class="modal-img">
+            <img src="images/WholesaleItems4.jfif" alt="Wholesale Item 5" class="modal-img">
+          </div>
+          <span class="prev scrap-prev">&#10094;</span>
+          <span class="next scrap-next">&#10095;</span>
+          <div class="slider-dots"></div>
+        </div>
+        <p>Bulk wood, steel, and hardwood products for commercial and industrial supply.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Wires & Cables -->
-  <section id="cables" class="section">
-    <div class="container slide-in">
-      <div class="section-head">🔌 Wires & Cables Collection</div>
-      <p class="section-sub">
-        Farzana Trading provides a wide variety of high-quality wires and cables suitable for industrial, commercial,
-        and residential applications. Browse our Copper, Aluminum, Multi-Core, Flexible, and Armoured Cables below.
-      </p>
+<!-- White Wood Treatment Section -->
+<section id="white-wood-treatment" class="section">
+  <div class="container slide-in">
+    <div class="section-head">🧹 White Wood Treatment & Fungus Removal</div>
+    <p class="section-sub">
+      Farzana Trading provides professional white wood treatment services to remove fungus, prevent decay, and enhance the longevity of wood. Our advanced chemical solutions ensure safe and effective treatment for industrial and domestic wood applications.
+    </p>
 
-      <div class="scrap-grid">
-        <!-- Copper Wires -->
-        <div class="scrap-card">
-          <div class="card-title">⚡ Copper Wires</div>
+    <!-- Treatment Overview -->
+    <div class="cards-grid">
+      <div class="card glow-card">
+        <div class="card-title"><span class="card-icon">🔬</span> Overview</div>
+        <p>
+          White wood is susceptible to fungal attacks and decay, especially in humid conditions. Our treatment process penetrates the wood, removes existing fungi, and provides long-term protection using safe and approved chemicals.
+        </p>
+      </div>
 
-          <!-- Auto-scroll images -->
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
-              <img src="images/CopperWires.jfif" alt="Copper Wire 1" class="modal-img">
-              <img src="images/CopperWires1.jfif" alt="Copper Wire 2" class="modal-img">
-              <img src="images/CopperWires2.jfif" alt="Copper Wire 3" class="modal-img">
-              <img src="images/CopperWires3.jfif" alt="Copper Wire 4" class="modal-img">
-              <img src="images/CopperWires4.jfif" alt="Copper Wire 5" class="modal-img">
-              <img src="images/CopperWires5.jfif" alt="Copper Wire 6" class="modal-img">
-            </div>
-          </div>
+      <div class="card glow-card">
+        <div class="card-title"><span class="card-icon">🧪</span> Chemicals Used</div>
+        <p>
+          We use professional-grade antifungal and wood preservative chemicals that are non-toxic once dried. These chemicals include:
+        </p>
+        <ul>
+          <li>✅ Borate-based antifungal solutions</li>
+          <li>✅ Copper-based preservatives for long-lasting protection</li>
+          <li>✅ Eco-friendly wood-safe fungicides</li>
+        </ul>
+      </div>
 
-          <p>
-            High-conductivity copper wires for all electrical installations.
-          </p>
-          <ul class="scrap-details">
-            <li>📦 Available Sizes: 1.5mm², 2.5mm², 4mm², 6mm²</li>
-            <li>⚡ Usage: Electrical wiring, power distribution, industrial machinery</li>
-            <li>⭐ Flexible and durable insulation for long-lasting use</li>
-            <li>💫 Compliant with international safety standards</li>
-          </ul>
-        </div>
+      <div class="card glow-card">
+        <div class="card-title"><span class="card-icon">⚙️</span> Treatment Process</div>
+        <ol>
+          <li>Inspection and assessment of affected white wood.</li>
+          <li>Cleaning and sanding the surface to remove visible fungi.</li>
+          <li>Application of antifungal chemical solution using spraying, brushing, or dipping methods.</li>
+          <li>Allowing wood to absorb chemicals and dry completely.</li>
+          <li>Post-treatment inspection and optional coating for enhanced protection.</li>
+        </ol>
+      </div>
 
-        <!-- Aluminum Cables -->
-        <div class="scrap-card">
-          <div class="card-title">🔗 Aluminum Cables</div>
-
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
-              <img src="images/AluminumCables.jfif" alt="Aluminum Cable 1" class="modal-img">
-              <img src="images/AluminumCables1.jfif" alt="Aluminum Cable 2" class="modal-img">
-              <img src="images/AluminumCables2.jfif" alt="Aluminum Cable 3" class="modal-img">
-              <img src="images/AluminumCables3.jfif" alt="Aluminum Cable 4" class="modal-img">
-              <img src="images/AluminumCables4.jfif" alt="Aluminum Cable 5" class="modal-img">
-              <img src="images/AluminumCables5.jfif" alt="Aluminum Cable 6" class="modal-img">
-            </div>
-          </div>
-
-          <p>
-            Lightweight and cost-effective aluminum cables for industrial applications.
-          </p>
-          <ul class="scrap-details">
-            <li>📦 Available Sizes: 10mm², 16mm², 25mm², 35mm²</li>
-            <li>⚡ Usage: Overhead lines, power distribution, heavy equipment</li>
-            <li>⭐ Corrosion-resistant aluminum with reinforced insulation</li>
-            <li>💫 Durable and long-lasting</li>
-          </ul>
-        </div>
-
-        <!-- Multi-Core Cables -->
-        <div class="scrap-card">
-          <div class="card-title">🟢 Multi-Core Cables</div>
-
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
-              <img src="images/MultiCoreCables.jfif" alt="Multi-Core Cable 1" class="modal-img">
-              <img src="images/MultiCoreCables1.jfif" alt="Multi-Core Cable 2" class="modal-img">
-              <img src="images/MultiCoreCables2.jfif" alt="Multi-Core Cable 3" class="modal-img">
-              <img src="images/MultiCoreCables3.jfif" alt="Multi-Core Cable 4" class="modal-img">
-              <img src="images/MultiCoreCables4.jfif" alt="Multi-Core Cable 5" class="modal-img">
-              <img src="images/MultiCoreCables5.jfif" alt="Multi-Core Cable 6" class="modal-img">
-            </div>
-          </div>
-
-          <p>
-            Versatile multi-core cables for industrial and commercial electrical networks.
-          </p>
-          <ul class="scrap-details">
-            <li>📦 Available Types: 2-Core, 3-Core, 4-Core</li>
-            <li>⚡ Usage: Control circuits, power distribution, building wiring</li>
-            <li>⭐ Flexible PVC insulation with durable outer sheath</li>
-            <li>💫 Certified for safety and high performance</li>
-          </ul>
-        </div>
-
-        <!-- Flexible Wires -->
-        <div class="scrap-card">
-          <div class="card-title">🔌 Flexible Wires</div>
-
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
-              <img src="images/FlexibleWires.jfif" alt="Flexible Wire 1" class="modal-img">
-              <img src="images/FlexibleWires1.jfif" alt="Flexible Wire 2" class="modal-img">
-              <img src="images/FlexibleWires2.jfif" alt="Flexible Wire 3" class="modal-img">
-              <img src="images/FlexibleWires3.jfif" alt="Flexible Wire 4" class="modal-img">
-              <img src="images/FlexibleWires4.jfif" alt="Flexible Wire 5" class="modal-img">
-              <img src="images/FlexibleWires5.jfif" alt="Flexible Wire 6" class="modal-img">
-            </div>
-          </div>
-
-          <p>
-            Highly flexible wires for installations requiring bending and twisting.
-          </p>
-          <ul class="scrap-details">
-            <li>📦 Available Sizes: 0.5mm² to 6mm²</li>
-            <li>⚡ Usage: Appliances, control panels, portable equipment</li>
-            <li>⭐ Durable insulation and easy to handle</li>
-            <li>💫 Excellent conductivity and safety standards</li>
-          </ul>
-        </div>
-
-        <!-- Armoured Cables -->
-        <div class="scrap-card">
-          <div class="card-title">🛡️ Armoured Cables</div>
-
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
-              <img src="images/ArmouredCables.jfif" alt="Armoured Cable 1" class="modal-img">
-              <img src="images/ArmouredCables1.jfif" alt="Armoured Cable 2" class="modal-img">
-              <img src="images/ArmouredCables2.jfif" alt="Armoured Cable 3" class="modal-img">
-              <img src="images/ArmouredCables3.jfif" alt="Armoured Cable 4" class="modal-img">
-              <img src="images/ArmouredCables4.jfif" alt="Armoured Cable 5" class="modal-img">
-              <img src="images/ArmouredCables5.jfif" alt="Armoured Cable 6" class="modal-img">
-            </div>
-          </div>
-
-          <p>
-            Heavy-duty armoured cables for underground and outdoor installations.
-          </p>
-          <ul class="scrap-details">
-            <li>📦 Available Sizes: 10mm² to 95mm²</li>
-            <li>⚡ Usage: Underground cabling, power distribution, industrial plants</li>
-            <li>⭐ Steel wire armored for protection against mechanical damage</li>
-            <li>🔅 Weather and corrosion resistant</li>
-          </ul>
-        </div>
+      <div class="card glow-card">
+        <div class="card-title"><span class="card-icon">🌟</span> Benefits</div>
+        <ul>
+          <li>✔️ Effective removal of fungus and mold from white wood.</li>
+          <li>✔️ Prevents future fungal growth and decay.</li>
+          <li>✔️ Enhances wood durability and structural integrity.</li>
+          <li>✔️ Eco-friendly and safe for indoor applications once dried.</li>
+        </ul>
       </div>
     </div>
-  </section>
 
-  <!-- Building Materials -->
-  <section id="materials" class="section">
-    <div class="container slide-in">
-      <div class="section-head">🏗️ Building Materials Collection</div>
-      <p class="section-sub">
-        Farzana Trading provides premium quality building materials for construction, renovation, and industrial
-        projects.
-        Explore Cement, Blocks, Pipes, Steels, Woods, Paints, Switches, Lights, Tiles, Granites, and Equipment below.
-      </p>
-
-      <div class="scrap-grid">
-        <!-- Cement -->
-        <div class="scrap-card">
-          <div class="card-title">⚪ Cement</div>
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
-              <img src="images/Cement.jfif" alt="Cement 1" class="modal-img">
-              <img src="images/cement1.jfif" alt="Cement 2" class="modal-img">
-              <img src="images/cement2.jfif" alt="Cement 3" class="modal-img">
-              <img src="images/cement3.jfif" alt="Cement 4" class="modal-img">
-              <img src="images/cement4.jfif" alt="Cement 5" class="modal-img">
-              <img src="images/cement5.jfif" alt="Cement 6" class="modal-img">
-            </div>
+    <!-- Image Gallery Slider -->
+    <div class="scrap-grid">
+      <div class="scrap-card">
+        <div class="card-title">Treatment in Action</div>
+        <div class="slider-container scrap-slider">
+          <div class="slides">
+            <img src="images/fungsaffected.jfif" alt="White Wood Before Treatment" class="modal-img">
+            <img src="images/fungsprocess.jfif" alt="Applying Chemical Solution" class="modal-img">
+            <img src="images/fungsremoved.jfif" alt="White Wood After Treatment" class="modal-img">
+            <img src="images/fungsaffected.jfif" alt="White Wood Before Treatment" class="modal-img">
+            <img src="images/fungsprocess.jfif" alt="Applying Chemical Solution" class="modal-img">
+            <img src="images/fungsremoved.jfif" alt="White Wood After Treatment" class="modal-img">
           </div>
-          <p>High-strength cement suitable for all types of construction work.</p>
-          <ul class="scrap-details">
-            <li>🏷️ Types: OPC, PPC, Sulfate Resistant</li>
-            <li>⚡ Usage: Residential, commercial, industrial projects</li>
-            <li>⭐ Complies with international quality standards</li>
-            <li>🧰 Available in 50kg and bulk bags</li>
-          </ul>
+          <span class="prev scrap-prev">&#10094;</span>
+          <span class="next scrap-next">&#10095;</span>
+          <div class="slider-dots"></div>
         </div>
-
-        <!-- Concrete Blocks -->
-        <div class="scrap-card">
-          <div class="card-title">🧱 Concrete Blocks</div>
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
-              <img src="images/ConcreteBlocks.jfif" alt="Block 1" class="modal-img">
-              <img src="images/ConcreteBlocks1.jfif" alt="Block 2" class="modal-img">
-              <img src="images/ConcreteBlocks2.jfif" alt="Block 3" class="modal-img">
-              <img src="images/ConcreteBlocks3.jfif" alt="Block 4" class="modal-img">
-              <img src="images/ConcreteBlocks4.jfif" alt="Block 5" class="modal-img">
-              <img src="images/ConcreteBlocks5.jfif" alt="Block 6" class="modal-img">
-            </div>
-          </div>
-          <p>Durable concrete blocks for walls, partitions, and foundations.</p>
-          <ul class="scrap-details">
-            <li>📦 Sizes: 200x200x400mm, 150x200x400mm, 100x200x400mm</li>
-            <li>⚡ Usage: Residential, commercial, industrial buildings</li>
-            <li>⭐ High compression strength and long-lasting</li>
-            <li>🌱 Eco-friendly and cost-effective</li>
-          </ul>
-        </div>
-
-        <!-- Pipes -->
-        <div class="scrap-card">
-          <div class="card-title">🔵 Pipes</div>
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
-              <img src="images/Pipes.jfif" alt="Pipe 1" class="modal-img">
-              <img src="images/pipes1.jfif" alt="Pipe 2" class="modal-img">
-              <img src="images/pipes2.jfif" alt="Pipe 3" class="modal-img">
-              <img src="images/pipes3.jfif" alt="Pipe 4" class="modal-img">
-              <img src="images/pipes4.jfif" alt="Pipe 5" class="modal-img">
-              <img src="images/pipes5.jfif" alt="Pipe 6" class="modal-img">
-            </div>
-          </div>
-          <p>High-quality pipes for water supply, drainage, and industrial applications.</p>
-          <ul class="scrap-details">
-            <li>✨ Material: PVC, CPVC, HDPE, GI</li>
-            <li>📦 Sizes: 20mm to 500mm diameter</li>
-            <li>⚡ Usage: Plumbing, irrigation, industrial installations</li>
-            <li>⭐ Corrosion-resistant and durable</li>
-          </ul>
-        </div>
-
-        <!-- Steel -->
-        <div class="scrap-card">
-          <div class="card-title">🟢 Steel</div>
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
-              <img src="images/Steel.jfif" alt="Steel 1" class="modal-img">
-              <img src="images/steel1.jfif" alt="Steel 2" class="modal-img">
-              <img src="images/steel2.jfif" alt="Steel 3" class="modal-img">
-              <img src="images/steel3.jfif" alt="Steel 4" class="modal-img">
-              <img src="images/steel4.jfif" alt="Steel 5" class="modal-img">
-              <img src="images/steel5.jfif" alt="Steel 6" class="modal-img">
-            </div>
-          </div>
-          <p>Reinforced steel bars and sections for construction and industrial use.</p>
-          <ul class="scrap-details">
-            <li>✨ Grades: TMT Bars, Mild Steel, Structural Steel</li>
-            <li>⚡ Usage: Reinforcement, frameworks, machinery structures</li>
-            <li>⭐ High tensile strength and durability</li>
-            <li>🧰 Available in rods, coils, and sections</li>
-          </ul>
-        </div>
-
-        <!-- Wood -->
-        <div class="scrap-card">
-          <div class="card-title">🪵 Wood</div>
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
-              <img src="images/Wood.jfif" alt="Wood 1" class="modal-img">
-              <img src="images/wood1.jfif" alt="Wood 2" class="modal-img">
-              <img src="images/wood2.jfif" alt="Wood 3" class="modal-img">
-              <img src="images/wood3.jfif" alt="Wood 4" class="modal-img">
-              <img src="images/wood4.jfif" alt="Wood 5" class="modal-img">
-              <img src="images/wood5.jfif" alt="Wood 6" class="modal-img">
-            </div>
-          </div>
-          <p>High-quality construction and furniture-grade wood for versatile use.</p>
-          <ul class="scrap-details">
-            <li>🏷️ Types: Teak, Pine, Mahogany, Oak</li>
-            <li>⚡ Usage: Furniture, flooring, paneling, structural works</li>
-            <li>⭐ Durable and treated for pest resistance</li>
-            <li>🧰 Available in planks, boards, and panels</li>
-          </ul>
-        </div>
-
-        <!-- Paints -->
-        <div class="scrap-card">
-          <div class="card-title">🎨 Paints</div>
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
-              <img src="images/Paints.jfif" alt="Paint 1" class="modal-img">
-              <img src="images/Paints1.jfif" alt="Paint 2" class="modal-img">
-              <img src="images/Paints2.jfif" alt="Paint 3" class="modal-img">
-              <img src="images/Paints3.jfif" alt="Paint 4" class="modal-img">
-              <img src="images/Paints4.jfif" alt="Paint 5" class="modal-img">
-              <img src="images/Paints5.jfif" alt="Paint 6" class="modal-img">
-            </div>
-          </div>
-          <p>Premium interior and exterior paints for lasting color and protection.</p>
-          <ul class="scrap-details">
-            <li>🏷️ Types: Emulsion, Enamel, Waterproof, Texture</li>
-            <li>⚡ Usage: Walls, ceilings, furniture, exterior surfaces</li>
-            <li>🌱 Environment-friendly and low VOC</li>
-            <li>🧰 Available in all color shades</li>
-          </ul>
-        </div>
-
-        <!-- Switches & Lights -->
-        <div class="scrap-card">
-          <div class="card-title">💡 Switches & Lights</div>
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
-              <img src="images/SwitchesLights.jfif" alt="Switch 1" class="modal-img">
-              <img src="images/SwitchesLights1.jfif" alt="Light 1" class="modal-img">
-              <img src="images/SwitchesLights2.jfif" alt="Light 2" class="modal-img">
-              <img src="images/SwitchesLights3.jfif" alt="Light 3" class="modal-img">
-              <img src="images/SwitchesLights4.jfif" alt="Light 4" class="modal-img">
-              <img src="images/SwitchesLights5.jfif" alt="Light 5" class="modal-img">
-            </div>
-          </div>
-          <p>Reliable electrical switches, sockets, and lighting solutions.</p>
-          <ul class="scrap-details">
-            <li>🏷️ Types: Switches, Sockets, LED, CFL, Tube Lights</li>
-            <li>⚡ Usage: Residential, commercial, and industrial installations</li>
-            <li>⭐ Durable and safe</li>
-            <li>🧰 Available in different designs and colors</li>
-          </ul>
-        </div>
-
-        <!-- Tiles & Granites -->
-        <div class="scrap-card">
-          <div class="card-title">🟤 Tiles & Granites</div>
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
-              <img src="images/TilesGranites.jfif" alt="Tile 1" class="modal-img">
-              <img src="images/TilesGranites1.jfif" alt="Granite 1" class="modal-img">
-              <img src="images/TilesGranites2.jfif" alt="Tile 2" class="modal-img">
-              <img src="images/TilesGranites3.jfif" alt="Tile 3" class="modal-img">
-              <img src="images/TilesGranites4.jfif" alt="Tile 4" class="modal-img">
-              <img src="images/TilesGranites5.jfif" alt="Tile 5" class="modal-img">
-            </div>
-          </div>
-          <p>High-quality flooring and wall finishes for residential and commercial spaces.</p>
-          <ul class="scrap-details">
-            <li>🏷️ Types: Ceramic, Porcelain, Marble, Granite</li>
-            <li>⚡ Usage: Flooring, walls, countertops</li>
-            <li>⭐ Durable, polished, and scratch-resistant</li>
-            <li>🧰 Available in various sizes and colors</li>
-          </ul>
-        </div>
-
-        <!-- Equipments -->
-        <div class="scrap-card">
-          <div class="card-title">🛠️ Equipment</div>
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
-              <img src="images/equipment.jfif" alt="Equipment 1" class="modal-img">
-              <img src="images/equipment1.jfif" alt="Equipment 2" class="modal-img">
-              <img src="images/equipment2.png" alt="Equipment 3" class="modal-img">
-              <img src="images/equipment3.jfif" alt="Equipment 4" class="modal-img">
-              <img src="images/equipment4.jfif" alt="Equipment 5" class="modal-img">
-              <img src="images/equipment5.jfif" alt="Equipment 6" class="modal-img">
-            </div>
-          </div>
-          <p>Tools and equipment for construction, maintenance, and industrial use.</p>
-          <ul class="scrap-details">
-            <li>🏷️ Types: Power Tools, Hand Tools, Safety Equipment</li>
-            <li>⚡ Usage: Construction, industrial projects, workshops</li>
-            <li>⭐ Durable and reliable for professional use</li>
-            <li>🧰 Available in sets or individual items</li>
-          </ul>
-        </div>
-
+        <p>
+          Step-by-step visuals showing white wood before, during, and after chemical treatment for fungus removal.
+        </p>
       </div>
     </div>
-  </section>
 
-  <!-- Scrap Items -->
-  <section id="scraps" class="section">
-    <div class="container slide-in">
-      <div class="section-head" style="color:#0077b6;">♻️ Scrap Items Collection</div>
-      <p class="section-sub" style="color:#555;">
-        Farzana Trading offers a wide range of scrap materials suitable for recycling, industrial, and manufacturing
-        purposes.
-        Explore Metal Scrap, Plastic Scrap, Electronic Scrap, and other recyclable materials below.
-      </p>
-
-      <div class="scrap-grid">
-        <!-- Metal Scrap -->
-        <div class="scrap-card">
-          <div class="card-title">🛠️ Metal Scrap</div>
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
-              <img src="images/MetalScrap.jfif" alt="Metal Scrap 1" class="modal-img">
-              <img src="images/MetalScrap1.jfif" alt="Metal Scrap 2" class="modal-img">
-              <img src="images/MetalScrap2.jfif" alt="Metal Scrap 3" class="modal-img">
-              <img src="images/MetalScrap3.jfif" alt="Metal Scrap 4" class="modal-img">
-              <img src="images/MetalScrap4.jfif" alt="Metal Scrap 5" class="modal-img">
-              <img src="images/MetalScrap5.jfif" alt="Metal Scrap 6" class="modal-img">
-            </div>
-          </div>
-          <p>Ferrous and non-ferrous metal scrap collected for recycling and industrial use.</p>
-          <ul class="scrap-details">
-            <li>🏷️ Types: Iron, Steel, Aluminum, Copper</li>
-            <li>⚡ Usage: Recycling plants, foundries, industrial manufacturing</li>
-            <li>✔️ Sorted and graded for quality and purity</li>
-            <li>🌱 Eco-friendly and sustainable material source</li>
-          </ul>
-        </div>
-
-        <!-- Plastic Scrap -->
-        <div class="scrap-card">
-          <div class="card-title">🔹 Plastic Scrap</div>
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
-              <img src="images/PlasticScrap.jfif" alt="Plastic Scrap 1" class="modal-img">
-              <img src="images/PlasticScrap1.jfif" alt="Plastic Scrap 2" class="modal-img">
-              <img src="images/PlasticScrap2.jfif" alt="Plastic Scrap 3" class="modal-img">
-              <img src="images/PlasticScrap3.jfif" alt="Plastic Scrap 4" class="modal-img">
-              <img src="images/PlasticScrap4.jfif" alt="Plastic Scrap 5" class="modal-img">
-              <img src="images/PlasticScrap5.jfif" alt="Plastic Scrap 6" class="modal-img">
-            </div>
-          </div>
-          <p>Various types of recyclable plastics collected for reuse and industrial applications.</p>
-          <ul class="scrap-details">
-            <li>🏷️ Types: PET, HDPE, PVC, LDPE</li>
-            <li>⚡ Usage: Manufacturing, packaging, recycled products</li>
-            <li>✔️ Sorted by type and color for high-quality recycling</li>
-            <li>🌱 Environmentally responsible disposal</li>
-          </ul>
-        </div>
-
-        <!-- Electronic Scrap -->
-        <div class="scrap-card">
-          <div class="card-title">💻 Electronic Scrap</div>
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
-              <img src="images/ElectronicScrap.jfif" alt="Electronic Scrap 1" class="modal-img">
-              <img src="images/ElectronicScrap1.jfif" alt="Electronic Scrap 2" class="modal-img">
-              <img src="images/ElectronicScrap2.jfif" alt="Electronic Scrap 3" class="modal-img">
-              <img src="images/ElectronicScrap3.jfif" alt="Electronic Scrap 4" class="modal-img">
-              <img src="images/ElectronicScrap4.jfif" alt="Electronic Scrap 5" class="modal-img">
-              <img src="images/ElectronicScrap5.jfif" alt="Electronic Scrap 6" class="modal-img">
-            </div>
-          </div>
-          <p>Collected electronic waste for safe recycling and resource recovery.</p>
-          <ul class="scrap-details">
-            <li>🏷️ Types: PCBs, wires, cables, circuit boards, batteries</li>
-            <li>⚡ Usage: Recycling centers, refurbishing electronic parts</li>
-            <li>✔️ Environmentally safe processing</li>
-            <li>🌱 Proper handling of hazardous components</li>
-          </ul>
-        </div>
-
-        <!-- Other Scrap Items -->
-        <div class="scrap-card">
-          <div class="card-title">📦 Other Scrap Items</div>
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
-              <img src="images/OtherScrapItems.jfif" alt="Other Scrap 1" class="modal-img">
-              <img src="images/OtherScrapItems1.jfif" alt="Other Scrap 2" class="modal-img">
-              <img src="images/OtherScrapItems2.jfif" alt="Other Scrap 3" class="modal-img">
-              <img src="images/OtherScrapItems3.jfif" alt="Other Scrap 4" class="modal-img">
-              <img src="images/OtherScrapItems4.jfif" alt="Other Scrap 5" class="modal-img">
-              <img src="images/OtherScrapItems5.jfif" alt="Other Scrap 6" class="modal-img">
-            </div>
-          </div>
-          <p>Additional recyclable materials collected from industrial and commercial sources.</p>
-          <ul class="scrap-details">
-            <li>🟢 Includes wood scraps, rubber, cardboard, glass</li>
-            <li>⚡ Usage: Recycling, industrial processes, eco-friendly disposal</li>
-            <li>✔️ Sorted and categorized for efficiency</li>
-            <li>🌱 Supports sustainable and circular economy practices</li>
-          </ul>
-        </div>
-      </div>
+    <!-- Additional Notes -->
+    <div class="additional-notes">
+      <h4>💡 Important Notes</h4>
+      <ul>
+        <li>Always follow safety instructions when handling chemicals.</li>
+        <li>Treated wood should be dried completely before indoor use.</li>
+        <li>Regular inspection of treated wood ensures long-term protection.</li>
+        <li>Contact Farzana Trading for bulk or specialized treatment services.</li>
+      </ul>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Clients -->
   <section id="clients" class="section" style="background: #f0f8ff;">
@@ -719,14 +413,14 @@
         <div class="contact-details">
           <h3>📞 Contact Details</h3>
           <p><span class="icon">📧</span> info@farzanatrading.com</p>
-          <p><span class="icon">📱</span> +973 0000 0000</p>
+          <p><span class="icon">📱</span> 00973 6660 0052 <b>/</b> 00973 6666 0124</p>
         </div>
 
         <div class="working-hours">
           <h3>🕒 Working Hours</h3>
-          <p><span class="icon">📅</span> Sunday – Thursday</p>
+          <p><span class="icon">📅</span> Saturday – Thursday</p>
           <p><span class="icon">⏰</span> 8:00 AM – 6:00 PM</p>
-          <p><span class="icon">🚫</span> Friday & Saturday Closed</p>
+          <p><span class="icon">🚫</span> Friday Closed</p>
         </div>
 
         <form class="contact-form">
@@ -742,42 +436,53 @@
       <div class="contact-card contact-card-right">
         <h3 class="map-title">📍 Find Us on Map</h3>
 
-          <iframe class="map-frame"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.793635828943!2d50.58527241500001!3d26.233923983361513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49c6074c8d2c33%3A0x353b529f9fdb9c31!2sManama%20Bus%20Stand!5e0!3m2!1sen!2sbh!4v1700351965985!5m2!1sen!2sbh"
-    width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy">
-  </iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14327.736123713521!2d50.591424249999996!3d26.13369385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49ac771ba16a75%3A0xaaac015d2a2cfce4!2sNuwaidrat!5e0!3m2!1sen!2sbh!4v1763621415960!5m2!1sen!2sbh" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
         <div class="contact-address-box">
           <h4>🏢 Office Address</h4>
-          <p>Road 1234, Block 000, Manama, Kingdom of Bahrain</p>
+          <p>Building 2685, Road 5159, Block 951, ASKAR, Kingdom of Bahrain</p>
         </div>
       </div>
 
     </div>
   </section>
   <!-- Thin Light Footer -->
-  <footer class="footer-light">
-    <div class="footer-light-container">
-      <div class="footer-left">
-        <span>© 2025 Farzana Trading W.L.L</span>
-        <span> | Created by HR INFO</span>
-      </div>
-      <div class="footer-right">
-        <a href="mailto:info@farzanatrading.com">✉ info@farzanatrading.com</a>
-        <a href="tel:+97300000000">📞 +973 0000 0000</a>
+<footer class="footer-light">
+  <div class="footer-light-container">
+    <div class="footer-left">
+      <span>© 2025 Farzana Trading W.L.L</span>
+      <span> | Created by HR INFO</span>
+    </div>
+    <div class="footer-right">
+      <a href="mailto:info@farzanatrading.com">✉ info@farzanatrading.com</a>
+      <div class="phone-numbers">
+        <a href="tel:+97366600052">📞 +973 6660 0052</a>
+        <a href="tel:+97366660124">📞 +973 6666 0124</a>
       </div>
     </div>
-  </footer>
-  <!-- Modern Modal -->
-  <div id="imgModal" class="modal">
+  </div>
+</footer>
+
+
+  <!-- WhatsApp Chat Button -->
+    <a href="https://wa.me/97366600052" class="whatsapp-chat" target="_blank" rel="noopener">
+        <img src="images/whatsapp-icon.png" alt="WhatsApp Chat">
+        <span>Chat with us</span>
+    </a>
+  <!-- Image Modal -->
+  <div id="imageModal" class="modal">
     <div class="modal-wrapper">
       <div class="modal-header">
-        <span class="modal-title">Farzana Trading W.L.L</span>
-        <span class="close">&times;</span>
+        <span class="modal-title">Image Preview</span>
+        <span class="close" id="modalClose">&times;</span>
       </div>
+
       <div class="modal-body">
-        <img class="modal-content" id="modalImg" alt="Preview">
+        <img id="modalImage" class="modal-content" />
       </div>
+
+      <span class="prev" id="modalPrev">&#10094;</span>
+      <span class="next" id="modalNext">&#10095;</span>
     </div>
   </div>
   <script src="js/script.js"></script>

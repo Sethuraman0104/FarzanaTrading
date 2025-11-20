@@ -1,1190 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Farzana Trading</title>
-  <style>
-    :root {
-      /* BRAND COLORS */
-      --primary: #1A3DA8;
-      /* Main Blue */
-      --primary-dark: #0B1D63;
-      /* Deep Navy */
-      --primary-light: #AAC4F5;
-      /* Light Steel Blue */
-
-      /* ACCENT */
-      --accent: #E63946;
-      /* Energetic Red */
-      --accent-dark: #C71C2D;
-
-      /* NEUTRALS */
-      --bg: #FFFFFF;
-      --bg-gradient-start: #F0F4FF;
-      --surface: #F9F9FB;
-      --card: #FFFFFF;
-      --muted: #555555;
-      --text-heading: #0F172A;
-
-      /* PREMIUM TONES */
-      --gold: #C9B59C;
-      /* Soft Gold */
-      --beige: #EFE9E3;
-
-      /* EFFECTS */
-      --radius: 14px;
-      --shadow: 0 6px 20px rgba(16, 24, 40, 0.12);
-      --glow: 0 0 20px rgba(26, 61, 168, 0.45);
-    }
-
-    /* ===== Global Reset ===== */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html,
-    body {
-      height: 100%;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
-      line-height: 1.55;
-      background: linear-gradient(135deg, #FFFDEC, #FDF7F4);
-      /* glossy bluish-white gradient */
-      color: #213555;
-      background-attachment: fixed;
-      transition: background 0.3s ease;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* ===== Container ===== */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 28px;
-    }
-
-    /* ===== Header ===== */
-    .site-header {
-      position: fixed;
-      top: 8px;
-      left: 8px;
-      right: 8px;
-      z-index: 100;
-      background: linear-gradient(135deg, #C9B59C, #EFE9E3);
-      border-radius: 16px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      padding: 8px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: all 0.3s ease;
-      flex-wrap: nowrap;
-    }
-
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      width: 100%;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .logo-wrapper {
-      background: #fff;
-      border-radius: 50%;
-      padding: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.4);
-    }
-
-    .logo-wrapper img {
-      height: 48px;
-      display: block;
-    }
-
-    /* Logo text */
-    .logo-text {
-      display: inline-block;
-      font-weight: 700;
-      font-size: 1.2rem;
-      color: #2014a4;
-      white-space: nowrap;
-      overflow: hidden;
-    }
-
-    /* Main navigation */
-    .main-nav {
-      display: flex;
-      gap: 30px;
-      align-items: center;
-    }
-
-    .main-nav a {
-      color: #2014a4;
-      padding: 10px;
-      border-radius: 8px;
-      transition: all .2s;
-    }
-
-    .main-nav a:hover {
-      background: rgba(255, 255, 255, 0.15);
-      transform: translateY(-2px);
-    }
-
-    /* Hamburger toggle */
-    .nav-toggle {
-      display: none;
-      font-size: 28px;
-      color: #fff;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    /* Hero Section */
-    .hero {
-      position: relative;
-      height: min(78vh, 320px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      margin-top: 98px;
-    }
-
-    .hero-parallax {
-      position: absolute;
-      inset: 0;
-      background-image: url('images/banner4.jpg');
-      background-size: cover;
-      background-position: center;
-      /* transform: translateZ(0); */
-      will-change: transform;
-      /* filter: brightness(0.7); */
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      /* background: linear-gradient(180deg, rgba(32,20,164,0.3), rgba(32,20,164,0.5)); */
-      mix-blend-mode: multiply;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 3;
-      text-align: center;
-      color: #fff;
-      padding: 48px 12px;
-    }
-
-    .hero-content h1 {
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      margin-bottom: 0.5rem;
-      text-shadow: 0 6px 30px rgba(0, 0, 0, 0.45), 0 0 18px var(--accent);
-    }
-
-    .hero-content p {
-      font-size: 1.2rem;
-      margin-bottom: 24px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 20px;
-      border-radius: 10px;
-      border: 1px solid transparent;
-      font-weight: 600;
-      cursor: pointer;
-      transition: transform .2s, box-shadow .2s;
-    }
-
-    .btn.primary {
-      background: var(--primary);
-      color: #fff;
-      box-shadow: var(--glow);
-    }
-
-    .btn.primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(32, 20, 164, 0.45);
-    }
-
-    /* ===== Sections ===== */
-    .section {
-      padding: 5px 0;
-    }
-
-    .section-head {
-      font-weight: 700;
-      font-size: 1.8rem;
-      margin-bottom: 16px;
-      display: inline-block;
-      color: var(--primary);
-      position: relative;
-      padding-bottom: 6px;
-      cursor: default;
-    }
-
-    /* Animated underline using pseudo-element */
-    .section-head::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0%;
-      height: 3px;
-      background: var(--accent);
-      border-radius: 2px;
-      transition: width 0.4s ease;
-    }
-
-    /* Hover effect: underline expands and text slightly scales */
-    .section-head:hover {
-      color: var(--accent);
-      transform: scale(1.05);
-    }
-
-    .section-head:hover::after {
-      width: 50px;
-    }
-
-    /* Section Subheading */
-    .section-sub {
-      margin-bottom: 24px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* Optional: small glowing underline animation */
-    @keyframes glowUnderline {
-
-      0%,
-      100% {
-        box-shadow: 0 0 4px var(--accent);
-      }
-
-      50% {
-        box-shadow: 0 0 12px var(--accent);
-      }
-    }
-
-    .section-head::after {
-      animation: glowUnderline 2s infinite;
-    }
-
-    .section-sub {
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    /* Scrolling images container */
-    .scrolling-images {
-      width: 100%;
-      height: 250px;
-      overflow: hidden;
-      border-radius: 12px;
-      margin: 12px 0;
-      box-shadow: 0 4px 12px rgba(32, 20, 164, 0.1), inset 0 2px 4px rgba(255, 255, 255, 0.3);
-    }
-
-    /* Inner scrolling strip */
-    .scrolling-images-inner {
-      display: flex;
-      height: 250px;
-      gap: 12px;
-      animation: scrollImages 20s linear infinite;
-    }
-
-    /* Images */
-    .scrolling-images-inner img {
-      width: 280px;
-      height: 240px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(32, 20, 164, 0.1);
-      flex-shrink: 0;
-    }
-
-    /* Auto scroll animation */
-    @keyframes scrollImages {
-      0% {
-        transform: translateX(0);
-      }
-
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    /* Modern styled bullet points */
-    .pallet-details {
-      margin-top: 12px;
-      padding-left: 0;
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .pallet-details li {
-      position: relative;
-      padding-left: 28px;
-      font-weight: 500;
-      color: #2014a4;
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
-    }
-
-    /* Custom bullet using pseudo-element */
-    .pallet-details li::before {
-      content: "✔";
-      /* Can use icons like check, diamond, circle, etc. */
-      position: absolute;
-      left: 0;
-      top: 0;
-      font-size: 1rem;
-      color: var(--accent);
-      background: linear-gradient(135deg, #ff091e, #2014a4);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    /* Add hover glow effect */
-    .pallet-details li:hover::before {
-      transform: scale(1.2);
-      filter: drop-shadow(0 0 6px var(--accent));
-    }
-
-    /* ===== Cards ===== */
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    /* Card styling */
-    .card {
-      background: #fdfdfd;
-      /* light theme color */
-      border-radius: var(--radius);
-      padding: 20px;
-      min-height: 240px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    /* Glow / Emboss effect */
-    .glow-card {
-      box-shadow: 0 4px 12px rgba(32, 20, 164, 0.15), inset 0 2px 4px rgba(255, 255, 255, 0.4);
-      border: 2px solid rgba(32, 20, 164, 0.1);
-    }
-
-    /* Hover effect */
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(32, 20, 164, 0.25), inset 0 2px 4px rgba(255, 255, 255, 0.4);
-    }
-
-    /* Card title */
-    .card-title {
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--primary);
-      margin-bottom: 12px;
-      font-size: 1.2rem;
-    }
-
-    /* Icon in title */
-    .card-icon {
-      font-size: 1.3rem;
-    }
-
-    /* ===== About Grid ===== */
-    .about-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      align-items: stretch;
-    }
-
-    @media(max-width:880px) {
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-
-      .cards-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid rgba(12, 17, 25, 0.1);
-      margin-bottom: 8px;
-    }
-
-    .contact-form button {
-      width: 100%;
-    }
-
-    .footer-light {
-      background: #696FC7;
-      /* light background */
-      color: #F9F5F0;
-      /* primary theme color for text */
-      padding: 12px 20px;
-      font-family: Inter, sans-serif;
-      font-size: 0.85rem;
-      border-top: 5px solid #A7AAE1;
-    }
-
-    .footer-light-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .footer-left span {
-      margin-right: 8px;
-    }
-
-    .footer-right a {
-      margin-left: 12px;
-      color: #F9F5F0;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .footer-right a:hover {
-      color: #F9F5F0;
-      /* darker shade on hover */
-    }
-
-    /* Responsive */
-    @media(max-width:768px) {
-      .footer-light-container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .footer-right a {
-        margin-left: 0;
-        margin-right: 12px;
-      }
-    }
-
-
-    /* ===== Slide-in ===== */
-    .slide-in {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity .64s ease, transform .64s ease;
-    }
-
-    .slide-in.visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    /* ===== Wire Menu ===== */
-    .wire-menu {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      gap: 50px;
-    }
-
-    /* .wire-node{
-  position:relative;
-  padding:8px 12px;
-  font-weight:600;
-  color:#fff;
-  cursor:pointer;
-  transition:all .2s;
-  animation:float 4s ease-in-out infinite alternate;
-} */
-    /* ===== Enhanced Wire Menu Buttons ===== */
-    .wire-node {
-      position: relative;
-      padding: 10px 22px;
-      font-weight: 600;
-      color: #ffffff;
-      cursor: pointer;
-      letter-spacing: 0.5px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(8px);
-      transition: 0.25s ease;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-
-      /* Subtle floating animation */
-      animation: float 5s ease-in-out infinite alternate;
-    }
-
-    /* Hover Effect */
-    .wire-node:hover {
-      transform: translateY(-4px) scale(1.04);
-      color: #BF1A1A;
-      border-color: #AAC4F5;
-      box-shadow:
-        0 2px 5px rgba(255, 255, 255, 0.12),
-        0 0 5px #060771,
-        0 0 5px #AAC4F5;
-    }
-
-    /* Add gradient glow layer on hover */
-    .wire-node:hover::before {
-      opacity: 1;
-      filter: blur(5px);
-      background: radial-gradient(circle,
-          #AAC4F5 20%,
-          #060771 20%,
-          transparent 100%);
-    }
-
-    /* .wire-node:hover{
-  color:var(--accent);
-  text-shadow:0 0 12px var(--accent),0 0 24px var(--accent);
-} */
-    /* Inner glow ring */
-    .wire-node::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 12px;
-      pointer-events: none;
-      box-shadow: 0 0 8px var(--primary);
-      opacity: 0.45;
-      animation: pulse 2.6s infinite ease-in-out;
-    }
-
-    /* .wire-node::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  border-radius:10%;
-  box-shadow:0 0 8px var(--primary);
-  animation:pulse 2s infinite;
-} */
-    @keyframes pulse {
-      0% {
-        box-shadow: 0 0 4px var(--primary);
-      }
-
-      50% {
-        box-shadow: 0 0 14px var(--primary);
-      }
-
-      100% {
-        box-shadow: 0 0 4px var(--primary);
-      }
-    }
-
-    /* Responsive Mobile */
-    @media(max-width:880px) {
-      .nav-toggle {
-        display: block;
-      }
-
-      .wire-menu {
-        position: fixed;
-        top: 64px;
-        right: 12px;
-        left: 12px;
-        color: #FFF;
-        background: linear-gradient(135deg, #f5deb3, #f0f0f0);
-        padding: 12px;
-        flex-direction: column;
-        gap: 16px;
-        display: none;
-        border-radius: 10px;
-        z-index: 99;
-      }
-
-      .wire-menu.show {
-        display: flex;
-      }
-
-      .hero {
-        position: relative;
-        height: min(78vh, 320px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        margin-top: 98px;
-      }
-
-      .logo-text {
-        display: none !important;
-      }
-    }
-
-    /* Scrolling Cards */
-    .scrolling-cards-wrapper {
-      width: 100%;
-      overflow: hidden;
-      margin-top: 32px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .scrolling-cards {
-      display: flex;
-      gap: 20px;
-      animation: scrollCards 40s linear infinite;
-      /* slower, smoother */
-    }
-
-    .card-item {
-      flex: 0 0 auto;
-      background: linear-gradient(135deg, #F9F8F6, #EFE9E3);
-      color: #850E35;
-      font-weight: 600;
-      padding: 16px 24px;
-      border-radius: 14px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      transform: translateY(0);
-      transition: transform 0.3s, box-shadow 0.3s;
-      white-space: nowrap;
-    }
-
-    .card-item:hover {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 8px 20px rgba(32, 20, 164, 0.8);
-    }
-
-    /* Scroll Animation */
-    @keyframes scrollCards {
-      0% {
-        transform: translateX(0);
-      }
-
-      100% {
-        transform: translateX(-50%);
-      }
-
-      /* half of total width for seamless repeat */
-    }
-
-    /* Responsive */
-    @media(max-width:880px) {
-      .scrolling-cards {
-        animation: scrollCards 50s linear infinite;
-      }
-
-      .hero-content h1 {
-        font-size: clamp(1.8rem, 5vw, 2.8rem);
-      }
-
-      .hero-content p {
-        font-size: 1rem;
-      }
-
-      .card-item {
-        padding: 12px 18px;
-        font-size: 0.9rem;
-      }
-    }
-
-    .clients-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
-    }
-
-    .client-card {
-      background: #ffffff;
-      border-radius: 20px;
-      padding: 25px 20px 30px;
-      text-align: center;
-      box-shadow: 0 15px 35px rgba(0, 123, 255, 0.1);
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .client-card::before {
-      content: '';
-      position: absolute;
-      top: -60%;
-      left: -60%;
-      width: 220%;
-      height: 220%;
-      background: radial-gradient(circle at center, rgba(0, 123, 255, 0.08), transparent 70%);
-      transform: rotate(45deg);
-      transition: all 0.6s ease;
-    }
-
-    .client-card:hover::before {
-      top: -30%;
-      left: -30%;
-      transform: rotate(0deg);
-    }
-
-    .client-card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 20px 45px rgba(0, 123, 255, 0.2);
-    }
-
-    .client-logo {
-      width: 90px;
-      height: 90px;
-      object-fit: contain;
-      margin-bottom: 15px;
-      border-radius: 50%;
-      background: #e6f0fa;
-      padding: 10px;
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
-    }
-
-    .client-card:hover .client-logo {
-      transform: scale(1.15);
-      box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
-    }
-
-    .client-name {
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: #0077b6;
-      margin-bottom: 6px;
-      transition: color 0.3s ease;
-    }
-
-    .client-desc {
-      font-size: 0.9rem;
-      color: #555;
-      line-height: 1.4;
-      margin-top: 5px;
-    }
-
-    .client-badge {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: #0077b6;
-      color: #fff;
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 3px 10px;
-      border-radius: 12px;
-      text-transform: uppercase;
-      box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
-    }
-
-    @media (max-width: 768px) {
-      .client-logo {
-        width: 70px;
-        height: 70px;
-      }
-
-      .client-card {
-        padding: 20px 15px 25px;
-      }
-    }
-
-    .scrap-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
-    }
-
-    .scrap-card {
-      background: #F3E8DF;
-      border-radius: 20px;
-      padding: 20px;
-      box-shadow: 0 12px 30px rgba(0, 123, 255, 0.08);
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .scrap-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 50px rgba(0, 123, 255, 0.15);
-    }
-
-    .card-title {
-      font-weight: 700;
-      font-size: 1.1rem;
-      margin-bottom: 12px;
-      color: #0077b6;
-    }
-
-    .scrolling-images {
-      overflow: hidden;
-      border-radius: 12px;
-      margin-bottom: 12px;
-      cursor: pointer;
-    }
-
-    .scrolling-images-inner {
-      display: flex;
-      gap: 10px;
-      animation: scroll-left 20s linear infinite;
-    }
-
-    .scrap-card:hover .scrolling-images-inner {
-      animation-play-state: paused;
-    }
-
-
-    @keyframes scroll-left {
-      0% {
-        transform: translateX(0);
-      }
-
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    .scrap-details {
-      list-style: none;
-      padding-left: 0;
-      margin-top: 10px;
-    }
-
-    .scrap-details li {
-      background: #E8D1C5;
-      padding: 8px 12px;
-      border-radius: 8px;
-      margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.9rem;
-      color: #452829;
-    }
-
-    @media (max-width: 768px) {
-      .scrolling-images-inner img {
-        width: 230px;
-        height: 250px;
-      }
-    }
-
-    /* ===========================
-   Modern Fancy Modal with Header
-   =========================== */
-    .modal {
-      display: none;
-      /* HIDDEN by default */
-      position: fixed;
-      inset: 0;
-      justify-content: center;
-      align-items: center;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(4px);
-      z-index: 9999;
-      padding: 20px;
-    }
-
-
-    /* Modal Wrapper */
-    .modal-wrapper {
-      background: rgba(255, 255, 255, 0.07);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-radius: 16px;
-      overflow: hidden;
-      width: 90%;
-      max-width: 800px;
-      max-height: 85vh;
-      display: flex;
-      flex-direction: column;
-      box-shadow:
-        0 8px 18px rgba(0, 0, 0, 0.3);
-      /* reduced glow */
-    }
-
-    /* Modal Header */
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: linear-gradient(135deg, #060771, #AAC4F5);
-      padding: 12px 20px;
-    }
-
-    .modal-title {
-      font-weight: 700;
-      color: #fff;
-      font-size: 1.2rem;
-      letter-spacing: 0.5px;
-    }
-
-    /* Close button aligned vertically center */
-    .modal-header .close {
-      font-size: 28px;
-      font-weight: 700;
-      color: #fff;
-      cursor: pointer;
-      transition: 0.3s ease;
-      line-height: 1;
-    }
-
-    .modal-header .close:hover {
-      color: #ff091e;
-    }
-
-    /* Modal Body */
-    .modal-body {
-      padding: 15px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-body .modal-content {
-      max-width: 100%;
-      max-height: 70vh;
-      border-radius: 12px;
-      object-fit: contain;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-
-    /* ===========================
-   Animations
-   =========================== */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes zoomIn {
-      0% {
-        opacity: 0;
-        transform: scale(0.75);
-      }
-
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    /* ===========================
-   Responsive
-   =========================== */
-    @media (max-width: 1024px) {
-      .modal-wrapper {
-        width: 95%;
-        max-height: 80vh;
-      }
-
-      .modal-body .modal-content {
-        max-height: 65vh;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .modal-wrapper {
-        width: 95%;
-        max-height: 75vh;
-      }
-
-      .modal-body .modal-content {
-        max-height: 60vh;
-      }
-
-      .modal-header .close {
-        font-size: 24px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .modal-wrapper {
-        width: 100%;
-        max-height: 70vh;
-        border-radius: 12px;
-      }
-
-      .modal-body .modal-content {
-        max-height: 55vh;
-      }
-
-      .modal-header .close {
-        font-size: 22px;
-      }
-    }
-
-
-    /* Contact Section Base */
-    .contact-section {
-      padding: 70px 0;
-      background: #f5f7fb;
-    }
-
-    .contact-container {
-      max-width: 1300px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 3fr 1fr;
-      gap: 25px;
-      align-items: stretch;
-    }
-
-    /* Custom Card */
-    .contact-card {
-      background: #ffffff;
-      border-radius: 18px;
-      padding: 28px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-      display: flex;
-      flex-direction: column;
-      gap: 22px;
-    }
-
-    /* Company Header */
-    .company-header {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .company-logo {
-      width: 60px;
-      height: 60px;
-      object-fit: contain;
-    }
-
-    .company-header h2 {
-      margin: 0;
-      font-size: 1.6rem;
-      font-weight: 700;
-    }
-
-    /* Icons */
-    .icon {
-      margin-right: 10px;
-      font-size: 1.1rem;
-    }
-
-    /* Section Titles */
-    .contact-details h3,
-    .working-hours h3,
-    .contact-form h3,
-    .map-title {
-      margin-bottom: 8px;
-      font-size: 1.2rem;
-      color: var(--primary);
-      font-weight: 700;
-    }
-
-    /* Form Inputs */
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 12px 14px;
-      margin-bottom: 12px;
-      border: 1px solid #d8d8d8;
-      border-radius: 10px;
-      font-size: 15px;
-    }
-
-    .send-btn {
-      width: 100%;
-      padding: 12px 14px;
-      background: linear-gradient(135deg, #1A73E8, #5595F7);
-      border: none;
-      color: white;
-      font-size: 16px;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: 0.25s ease;
-    }
-
-    .send-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 14px rgba(0, 119, 255, 0.35);
-    }
-
-    /* Map */
-    .map-frame {
-      width: 100%;
-      height: 260px;
-      border: 0;
-      border-radius: 12px;
-      margin-bottom: 15px;
-    }
-
-    /* Address box under map */
-    .contact-address-box {
-      background: #f0f5ff;
-      padding: 16px;
-      border-left: 4px solid #1A73E8;
-      border-radius: 12px;
-    }
-
-    .contact-address-box h4 {
-      margin: 0 0 6px 0;
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
-
-    /* Responsive */
-    @media(max-width: 900px) {
-      .contact-container {
-        grid-template-columns: 1fr;
-      }
-    }
-    /* Optional: show pointer cursor on hover */
-.logo, .logo-text {
-  cursor: pointer;
-}
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Farzana Trading W.L.L</title>
+  <meta name="description"
+    content="Farzana Trading — Supplier of pallets, cables, building materials and scrap services in Bahrain. Professional, light glossy design with animations." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet" />
+  <!-- Favicon / Tab Bar Icon -->
+  <link rel="icon" type="image/png" href="images/farzanatransparentlogo.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="images/farzanatransparentlogo.png" sizes="16x16">
 </head>
 
 <body>
+  <!-- Scroll to Top Button -->
+  <button id="scrollTopBtn" title="Go to top">🔝</button>
   <header class="site-header">
     <div class="header-inner">
-     <!-- Logo -->
-<div class="logo" id="logo">
-  <div class="logo-wrapper">
-    <img src="images/farzanatransparentlogo.png" alt="Farzana Trading">
-  </div>
-  <span id="logo-text" class="logo-text">Farzana Trading W.L.L</span>
-</div>
+      <!-- Logo -->
+      <div class="logo" id="logo">
+        <div class="logo-wrapper">
+          <img src="images/farzanatransparentlogo.png" alt="Farzana Trading">
+        </div>
+        <span id="logo-text" class="logo-text">Farzana Trading W.L.L</span>
+      </div>
 
       <!-- Hamburger Toggle -->
       <div class="nav-toggle">☰</div>
@@ -1310,8 +151,8 @@
           <div class="card-title"><span class="card-icon">🪵</span> Wood Pallets</div>
 
           <!-- Auto-scroll images -->
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
+          <div class="slider-container scrap-slider">
+            <div class="slides">
               <img src="images/pallets.jfif" alt="Wood Pallet 1" class="modal-img">
               <img src="images/pallets1.jfif" alt="Wood Pallet 2" class="modal-img">
               <img src="images/pallets2.jfif" alt="Wood Pallet 3" class="modal-img">
@@ -1320,6 +161,12 @@
               <img src="images/pallets4.jfif" alt="Wood Pallet 5" class="modal-img">
               <img src="images/pallets5.jfif" alt="Wood Pallet 6" class="modal-img">
             </div>
+            <!-- Arrows -->
+            <span class="prev scrap-prev">&#10094;</span>
+            <span class="next scrap-next">&#10095;</span>
+
+            <!-- Dots -->
+            <div class="slider-dots"></div>
           </div>
 
           <p>
@@ -1338,8 +185,8 @@
           <div class="card-title"><span class="card-icon">🔩</span> Steel Pallets</div>
 
           <!-- Auto-scroll images -->
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
+          <div class="slider-container scrap-slider">
+            <div class="slides">
               <img src="images/steelpallets.jfif" alt="Steel Pallet 1" class="modal-img">
               <img src="images/steelpallets1.jfif" alt="Steel Pallet 2" class="modal-img">
               <img src="images/steelpallets2.jfif" alt="Steel Pallet 3" class="modal-img">
@@ -1347,6 +194,12 @@
               <img src="images/steelpallets3.jfif" alt="Steel Pallet 4" class="modal-img">
               <img src="images/steelpallets4.jfif" alt="Steel Pallet 5" class="modal-img">
             </div>
+            <!-- Arrows -->
+            <span class="prev scrap-prev">&#10094;</span>
+            <span class="next scrap-next">&#10095;</span>
+
+            <!-- Dots -->
+            <div class="slider-dots"></div>
           </div>
 
           <p>
@@ -1378,8 +231,8 @@
           <div class="card-title">⚡ Copper Wires</div>
 
           <!-- Auto-scroll images -->
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
+          <div class="slider-container scrap-slider">
+            <div class="slides">
               <img src="images/CopperWires.jfif" alt="Copper Wire 1" class="modal-img">
               <img src="images/CopperWires1.jfif" alt="Copper Wire 2" class="modal-img">
               <img src="images/CopperWires2.jfif" alt="Copper Wire 3" class="modal-img">
@@ -1387,6 +240,12 @@
               <img src="images/CopperWires4.jfif" alt="Copper Wire 5" class="modal-img">
               <img src="images/CopperWires5.jfif" alt="Copper Wire 6" class="modal-img">
             </div>
+            <!-- Arrows -->
+            <span class="prev scrap-prev">&#10094;</span>
+            <span class="next scrap-next">&#10095;</span>
+
+            <!-- Dots -->
+            <div class="slider-dots"></div>
           </div>
 
           <p>
@@ -1404,8 +263,8 @@
         <div class="scrap-card">
           <div class="card-title">🔗 Aluminum Cables</div>
 
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
+          <div class="slider-container scrap-slider">
+            <div class="slides">
               <img src="images/AluminumCables.jfif" alt="Aluminum Cable 1" class="modal-img">
               <img src="images/AluminumCables1.jfif" alt="Aluminum Cable 2" class="modal-img">
               <img src="images/AluminumCables2.jfif" alt="Aluminum Cable 3" class="modal-img">
@@ -1413,6 +272,12 @@
               <img src="images/AluminumCables4.jfif" alt="Aluminum Cable 5" class="modal-img">
               <img src="images/AluminumCables5.jfif" alt="Aluminum Cable 6" class="modal-img">
             </div>
+            <!-- Arrows -->
+            <span class="prev scrap-prev">&#10094;</span>
+            <span class="next scrap-next">&#10095;</span>
+
+            <!-- Dots -->
+            <div class="slider-dots"></div>
           </div>
 
           <p>
@@ -1430,8 +295,8 @@
         <div class="scrap-card">
           <div class="card-title">🟢 Multi-Core Cables</div>
 
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
+          <div class="slider-container scrap-slider">
+            <div class="slides">
               <img src="images/MultiCoreCables.jfif" alt="Multi-Core Cable 1" class="modal-img">
               <img src="images/MultiCoreCables1.jfif" alt="Multi-Core Cable 2" class="modal-img">
               <img src="images/MultiCoreCables2.jfif" alt="Multi-Core Cable 3" class="modal-img">
@@ -1439,6 +304,12 @@
               <img src="images/MultiCoreCables4.jfif" alt="Multi-Core Cable 5" class="modal-img">
               <img src="images/MultiCoreCables5.jfif" alt="Multi-Core Cable 6" class="modal-img">
             </div>
+            <!-- Arrows -->
+            <span class="prev scrap-prev">&#10094;</span>
+            <span class="next scrap-next">&#10095;</span>
+
+            <!-- Dots -->
+            <div class="slider-dots"></div>
           </div>
 
           <p>
@@ -1456,8 +327,8 @@
         <div class="scrap-card">
           <div class="card-title">🔌 Flexible Wires</div>
 
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
+          <div class="slider-container scrap-slider">
+            <div class="slides">
               <img src="images/FlexibleWires.jfif" alt="Flexible Wire 1" class="modal-img">
               <img src="images/FlexibleWires1.jfif" alt="Flexible Wire 2" class="modal-img">
               <img src="images/FlexibleWires2.jfif" alt="Flexible Wire 3" class="modal-img">
@@ -1465,6 +336,12 @@
               <img src="images/FlexibleWires4.jfif" alt="Flexible Wire 5" class="modal-img">
               <img src="images/FlexibleWires5.jfif" alt="Flexible Wire 6" class="modal-img">
             </div>
+            <!-- Arrows -->
+            <span class="prev scrap-prev">&#10094;</span>
+            <span class="next scrap-next">&#10095;</span>
+
+            <!-- Dots -->
+            <div class="slider-dots"></div>
           </div>
 
           <p>
@@ -1482,8 +359,8 @@
         <div class="scrap-card">
           <div class="card-title">🛡️ Armoured Cables</div>
 
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
+          <div class="slider-container scrap-slider">
+            <div class="slides">
               <img src="images/ArmouredCables.jfif" alt="Armoured Cable 1" class="modal-img">
               <img src="images/ArmouredCables1.jfif" alt="Armoured Cable 2" class="modal-img">
               <img src="images/ArmouredCables2.jfif" alt="Armoured Cable 3" class="modal-img">
@@ -1491,6 +368,12 @@
               <img src="images/ArmouredCables4.jfif" alt="Armoured Cable 5" class="modal-img">
               <img src="images/ArmouredCables5.jfif" alt="Armoured Cable 6" class="modal-img">
             </div>
+            <!-- Arrows -->
+            <span class="prev scrap-prev">&#10094;</span>
+            <span class="next scrap-next">&#10095;</span>
+
+            <!-- Dots -->
+            <div class="slider-dots"></div>
           </div>
 
           <p>
@@ -1521,8 +404,8 @@
         <!-- Cement -->
         <div class="scrap-card">
           <div class="card-title">⚪ Cement</div>
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
+          <div class="slider-container scrap-slider">
+            <div class="slides">
               <img src="images/Cement.jfif" alt="Cement 1" class="modal-img">
               <img src="images/cement1.jfif" alt="Cement 2" class="modal-img">
               <img src="images/cement2.jfif" alt="Cement 3" class="modal-img">
@@ -1530,6 +413,12 @@
               <img src="images/cement4.jfif" alt="Cement 5" class="modal-img">
               <img src="images/cement5.jfif" alt="Cement 6" class="modal-img">
             </div>
+            <!-- Arrows -->
+            <span class="prev scrap-prev">&#10094;</span>
+            <span class="next scrap-next">&#10095;</span>
+
+            <!-- Dots -->
+            <div class="slider-dots"></div>
           </div>
           <p>High-strength cement suitable for all types of construction work.</p>
           <ul class="scrap-details">
@@ -1543,8 +432,8 @@
         <!-- Concrete Blocks -->
         <div class="scrap-card">
           <div class="card-title">🧱 Concrete Blocks</div>
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
+          <div class="slider-container scrap-slider">
+            <div class="slides">
               <img src="images/ConcreteBlocks.jfif" alt="Block 1" class="modal-img">
               <img src="images/ConcreteBlocks1.jfif" alt="Block 2" class="modal-img">
               <img src="images/ConcreteBlocks2.jfif" alt="Block 3" class="modal-img">
@@ -1552,6 +441,12 @@
               <img src="images/ConcreteBlocks4.jfif" alt="Block 5" class="modal-img">
               <img src="images/ConcreteBlocks5.jfif" alt="Block 6" class="modal-img">
             </div>
+            <!-- Arrows -->
+            <span class="prev scrap-prev">&#10094;</span>
+            <span class="next scrap-next">&#10095;</span>
+
+            <!-- Dots -->
+            <div class="slider-dots"></div>
           </div>
           <p>Durable concrete blocks for walls, partitions, and foundations.</p>
           <ul class="scrap-details">
@@ -1565,8 +460,8 @@
         <!-- Pipes -->
         <div class="scrap-card">
           <div class="card-title">🔵 Pipes</div>
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
+          <div class="slider-container scrap-slider">
+            <div class="slides">
               <img src="images/Pipes.jfif" alt="Pipe 1" class="modal-img">
               <img src="images/pipes1.jfif" alt="Pipe 2" class="modal-img">
               <img src="images/pipes2.jfif" alt="Pipe 3" class="modal-img">
@@ -1574,6 +469,12 @@
               <img src="images/pipes4.jfif" alt="Pipe 5" class="modal-img">
               <img src="images/pipes5.jfif" alt="Pipe 6" class="modal-img">
             </div>
+            <!-- Arrows -->
+            <span class="prev scrap-prev">&#10094;</span>
+            <span class="next scrap-next">&#10095;</span>
+
+            <!-- Dots -->
+            <div class="slider-dots"></div>
           </div>
           <p>High-quality pipes for water supply, drainage, and industrial applications.</p>
           <ul class="scrap-details">
@@ -1587,8 +488,8 @@
         <!-- Steel -->
         <div class="scrap-card">
           <div class="card-title">🟢 Steel</div>
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
+          <div class="slider-container scrap-slider">
+            <div class="slides">
               <img src="images/Steel.jfif" alt="Steel 1" class="modal-img">
               <img src="images/steel1.jfif" alt="Steel 2" class="modal-img">
               <img src="images/steel2.jfif" alt="Steel 3" class="modal-img">
@@ -1596,6 +497,12 @@
               <img src="images/steel4.jfif" alt="Steel 5" class="modal-img">
               <img src="images/steel5.jfif" alt="Steel 6" class="modal-img">
             </div>
+            <!-- Arrows -->
+            <span class="prev scrap-prev">&#10094;</span>
+            <span class="next scrap-next">&#10095;</span>
+
+            <!-- Dots -->
+            <div class="slider-dots"></div>
           </div>
           <p>Reinforced steel bars and sections for construction and industrial use.</p>
           <ul class="scrap-details">
@@ -1609,8 +516,8 @@
         <!-- Wood -->
         <div class="scrap-card">
           <div class="card-title">🪵 Wood</div>
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
+          <div class="slider-container scrap-slider">
+            <div class="slides">
               <img src="images/Wood.jfif" alt="Wood 1" class="modal-img">
               <img src="images/wood1.jfif" alt="Wood 2" class="modal-img">
               <img src="images/wood2.jfif" alt="Wood 3" class="modal-img">
@@ -1618,6 +525,12 @@
               <img src="images/wood4.jfif" alt="Wood 5" class="modal-img">
               <img src="images/wood5.jfif" alt="Wood 6" class="modal-img">
             </div>
+            <!-- Arrows -->
+            <span class="prev scrap-prev">&#10094;</span>
+            <span class="next scrap-next">&#10095;</span>
+
+            <!-- Dots -->
+            <div class="slider-dots"></div>
           </div>
           <p>High-quality construction and furniture-grade wood for versatile use.</p>
           <ul class="scrap-details">
@@ -1631,8 +544,8 @@
         <!-- Paints -->
         <div class="scrap-card">
           <div class="card-title">🎨 Paints</div>
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
+          <div class="slider-container scrap-slider">
+            <div class="slides">
               <img src="images/Paints.jfif" alt="Paint 1" class="modal-img">
               <img src="images/Paints1.jfif" alt="Paint 2" class="modal-img">
               <img src="images/Paints2.jfif" alt="Paint 3" class="modal-img">
@@ -1640,6 +553,12 @@
               <img src="images/Paints4.jfif" alt="Paint 5" class="modal-img">
               <img src="images/Paints5.jfif" alt="Paint 6" class="modal-img">
             </div>
+            <!-- Arrows -->
+            <span class="prev scrap-prev">&#10094;</span>
+            <span class="next scrap-next">&#10095;</span>
+
+            <!-- Dots -->
+            <div class="slider-dots"></div>
           </div>
           <p>Premium interior and exterior paints for lasting color and protection.</p>
           <ul class="scrap-details">
@@ -1653,8 +572,8 @@
         <!-- Switches & Lights -->
         <div class="scrap-card">
           <div class="card-title">💡 Switches & Lights</div>
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
+          <div class="slider-container scrap-slider">
+            <div class="slides">
               <img src="images/SwitchesLights.jfif" alt="Switch 1" class="modal-img">
               <img src="images/SwitchesLights1.jfif" alt="Light 1" class="modal-img">
               <img src="images/SwitchesLights2.jfif" alt="Light 2" class="modal-img">
@@ -1662,6 +581,12 @@
               <img src="images/SwitchesLights4.jfif" alt="Light 4" class="modal-img">
               <img src="images/SwitchesLights5.jfif" alt="Light 5" class="modal-img">
             </div>
+            <!-- Arrows -->
+            <span class="prev scrap-prev">&#10094;</span>
+            <span class="next scrap-next">&#10095;</span>
+
+            <!-- Dots -->
+            <div class="slider-dots"></div>
           </div>
           <p>Reliable electrical switches, sockets, and lighting solutions.</p>
           <ul class="scrap-details">
@@ -1675,8 +600,8 @@
         <!-- Tiles & Granites -->
         <div class="scrap-card">
           <div class="card-title">🟤 Tiles & Granites</div>
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
+          <div class="slider-container scrap-slider">
+            <div class="slides">
               <img src="images/TilesGranites.jfif" alt="Tile 1" class="modal-img">
               <img src="images/TilesGranites1.jfif" alt="Granite 1" class="modal-img">
               <img src="images/TilesGranites2.jfif" alt="Tile 2" class="modal-img">
@@ -1684,6 +609,12 @@
               <img src="images/TilesGranites4.jfif" alt="Tile 4" class="modal-img">
               <img src="images/TilesGranites5.jfif" alt="Tile 5" class="modal-img">
             </div>
+            <!-- Arrows -->
+            <span class="prev scrap-prev">&#10094;</span>
+            <span class="next scrap-next">&#10095;</span>
+
+            <!-- Dots -->
+            <div class="slider-dots"></div>
           </div>
           <p>High-quality flooring and wall finishes for residential and commercial spaces.</p>
           <ul class="scrap-details">
@@ -1697,8 +628,8 @@
         <!-- Equipments -->
         <div class="scrap-card">
           <div class="card-title">🛠️ Equipment</div>
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
+          <div class="slider-container scrap-slider">
+            <div class="slides">
               <img src="images/equipment.jfif" alt="Equipment 1" class="modal-img">
               <img src="images/equipment1.jfif" alt="Equipment 2" class="modal-img">
               <img src="images/equipment2.png" alt="Equipment 3" class="modal-img">
@@ -1706,6 +637,12 @@
               <img src="images/equipment4.jfif" alt="Equipment 5" class="modal-img">
               <img src="images/equipment5.jfif" alt="Equipment 6" class="modal-img">
             </div>
+            <!-- Arrows -->
+            <span class="prev scrap-prev">&#10094;</span>
+            <span class="next scrap-next">&#10095;</span>
+
+            <!-- Dots -->
+            <div class="slider-dots"></div>
           </div>
           <p>Tools and equipment for construction, maintenance, and industrial use.</p>
           <ul class="scrap-details">
@@ -1734,15 +671,22 @@
         <!-- Metal Scrap -->
         <div class="scrap-card">
           <div class="card-title">🛠️ Metal Scrap</div>
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
-              <img src="images/MetalScrap.jfif" alt="Metal Scrap 1" class="modal-img">
-              <img src="images/MetalScrap1.jfif" alt="Metal Scrap 2" class="modal-img">
-              <img src="images/MetalScrap2.jfif" alt="Metal Scrap 3" class="modal-img">
-              <img src="images/MetalScrap3.jfif" alt="Metal Scrap 4" class="modal-img">
-              <img src="images/MetalScrap4.jfif" alt="Metal Scrap 5" class="modal-img">
-              <img src="images/MetalScrap5.jfif" alt="Metal Scrap 6" class="modal-img">
+          <div class="slider-container scrap-slider">
+            <div class="slides">
+              <img src="images/MetalScrap.jfif">
+              <img src="images/MetalScrap1.jfif">
+              <img src="images/MetalScrap2.jfif">
+              <img src="images/MetalScrap3.jfif">
+              <img src="images/MetalScrap4.jfif">
+              <img src="images/MetalScrap5.jfif">
             </div>
+
+            <!-- Arrows -->
+            <span class="prev scrap-prev">&#10094;</span>
+            <span class="next scrap-next">&#10095;</span>
+
+            <!-- Dots -->
+            <div class="slider-dots"></div>
           </div>
           <p>Ferrous and non-ferrous metal scrap collected for recycling and industrial use.</p>
           <ul class="scrap-details">
@@ -1756,8 +700,8 @@
         <!-- Plastic Scrap -->
         <div class="scrap-card">
           <div class="card-title">🔹 Plastic Scrap</div>
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
+          <div class="slider-container scrap-slider">
+            <div class="slides">
               <img src="images/PlasticScrap.jfif" alt="Plastic Scrap 1" class="modal-img">
               <img src="images/PlasticScrap1.jfif" alt="Plastic Scrap 2" class="modal-img">
               <img src="images/PlasticScrap2.jfif" alt="Plastic Scrap 3" class="modal-img">
@@ -1765,6 +709,12 @@
               <img src="images/PlasticScrap4.jfif" alt="Plastic Scrap 5" class="modal-img">
               <img src="images/PlasticScrap5.jfif" alt="Plastic Scrap 6" class="modal-img">
             </div>
+            <!-- Arrows -->
+            <span class="prev scrap-prev">&#10094;</span>
+            <span class="next scrap-next">&#10095;</span>
+
+            <!-- Dots -->
+            <div class="slider-dots"></div>
           </div>
           <p>Various types of recyclable plastics collected for reuse and industrial applications.</p>
           <ul class="scrap-details">
@@ -1778,8 +728,8 @@
         <!-- Electronic Scrap -->
         <div class="scrap-card">
           <div class="card-title">💻 Electronic Scrap</div>
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
+          <div class="slider-container scrap-slider">
+            <div class="slides">
               <img src="images/ElectronicScrap.jfif" alt="Electronic Scrap 1" class="modal-img">
               <img src="images/ElectronicScrap1.jfif" alt="Electronic Scrap 2" class="modal-img">
               <img src="images/ElectronicScrap2.jfif" alt="Electronic Scrap 3" class="modal-img">
@@ -1787,6 +737,12 @@
               <img src="images/ElectronicScrap4.jfif" alt="Electronic Scrap 5" class="modal-img">
               <img src="images/ElectronicScrap5.jfif" alt="Electronic Scrap 6" class="modal-img">
             </div>
+            <!-- Arrows -->
+            <span class="prev scrap-prev">&#10094;</span>
+            <span class="next scrap-next">&#10095;</span>
+
+            <!-- Dots -->
+            <div class="slider-dots"></div>
           </div>
           <p>Collected electronic waste for safe recycling and resource recovery.</p>
           <ul class="scrap-details">
@@ -1800,8 +756,8 @@
         <!-- Other Scrap Items -->
         <div class="scrap-card">
           <div class="card-title">📦 Other Scrap Items</div>
-          <div class="scrolling-images">
-            <div class="scrolling-images-inner">
+          <div class="slider-container scrap-slider">
+            <div class="slides">
               <img src="images/OtherScrapItems.jfif" alt="Other Scrap 1" class="modal-img">
               <img src="images/OtherScrapItems1.jfif" alt="Other Scrap 2" class="modal-img">
               <img src="images/OtherScrapItems2.jfif" alt="Other Scrap 3" class="modal-img">
@@ -1809,6 +765,12 @@
               <img src="images/OtherScrapItems4.jfif" alt="Other Scrap 5" class="modal-img">
               <img src="images/OtherScrapItems5.jfif" alt="Other Scrap 6" class="modal-img">
             </div>
+            <!-- Arrows -->
+            <span class="prev scrap-prev">&#10094;</span>
+            <span class="next scrap-next">&#10095;</span>
+
+            <!-- Dots -->
+            <div class="slider-dots"></div>
           </div>
           <p>Additional recyclable materials collected from industrial and commercial sources.</p>
           <ul class="scrap-details">
@@ -1904,8 +866,9 @@
       <div class="contact-card contact-card-right">
         <h3 class="map-title">📍 Find Us on Map</h3>
 
-        <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12..." allowfullscreen=""
-          loading="lazy">
+        <iframe class="map-frame"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.793635828943!2d50.58527241500001!3d26.233923983361513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49c6074c8d2c33%3A0x353b529f9fdb9c31!2sManama%20Bus%20Stand!5e0!3m2!1sen!2sbh!4v1700351965985!5m2!1sen!2sbh"
+          width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy">
         </iframe>
 
         <div class="contact-address-box">
@@ -1929,80 +892,22 @@
       </div>
     </div>
   </footer>
-
-
-  <!-- Modern Modal -->
-  <div id="imgModal" class="modal">
+  <!-- Image Modal -->
+  <div id="imageModal" class="modal">
     <div class="modal-wrapper">
       <div class="modal-header">
-        <span class="modal-title">Farzana Trading W.L.L</span>
-        <span class="close">&times;</span>
+        <span class="modal-title">Image Preview</span>
+        <span class="close" id="modalClose">&times;</span>
       </div>
+
       <div class="modal-body">
-        <img class="modal-content" id="modalImg" alt="Preview">
+        <img id="modalImage" class="modal-content" />
       </div>
+
+      <span class="prev" id="modalPrev">&#10094;</span>
+      <span class="next" id="modalNext">&#10095;</span>
     </div>
   </div>
-
-  <script>
-    // Slide-in animation
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) { entry.target.classList.add('visible'); }
-      });
-    }, { threshold: 0.2 });
-    document.querySelectorAll('.slide-in').forEach(el => observer.observe(el));
-
-    // Hamburger toggle
-    const toggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.wire-menu');
-    toggle.addEventListener('click', () => nav.classList.toggle('show'));
-
-    // Animate logo typing
-    const logoText = "Farzana Trading W.L.L";
-    const logoSpan = document.getElementById('logo-text');
-    let i = 0, forward = true;
-    function typeLogo() {
-      if (forward) { i++; if (i > logoText.length) { forward = false; setTimeout(typeLogo, 800); return; } }
-      else { i--; if (i < 0) { forward = true; setTimeout(typeLogo, 400); return; } }
-      logoSpan.textContent = logoText.slice(0, i);
-      setTimeout(typeLogo, 150);
-    }
-    window.addEventListener('load', typeLogo);
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const modal = document.getElementById("imgModal");
-      const modalImg = document.getElementById("modalImg");
-      const closeBtn = modal.querySelector(".close");
-
-      // Open modal on image click
-      document.querySelectorAll(".modal-img").forEach(img => {
-        img.addEventListener("click", () => {
-          modal.style.display = "flex";  // only opens on click
-          modalImg.src = img.src;
-          modalImg.alt = img.alt || "Preview";
-        });
-      });
-
-      // Close modal on close button click
-      closeBtn.addEventListener("click", () => {
-        modal.style.display = "none";
-      });
-
-      // Close modal on clicking outside image
-      modal.addEventListener("click", (e) => {
-        if (e.target === modal) modal.style.display = "none";
-      });
-    });
-
-    // Scroll to top when logo or text is clicked
-document.getElementById('logo').addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth' // smooth scroll effect
-  });
-});
-
-  </script>
+  <script src="js/script.js"></script>
 </body>
 </html>
