@@ -965,7 +965,7 @@
  }
 
  .scrap-card {
-   background: #80A1BA;
+   background: #D7C097;
    border-radius: 20px;
    padding: 20px;
    box-shadow: 0 12px 30px rgba(0, 123, 255, 0.08);
@@ -988,7 +988,7 @@
 
  .scrap-card p {
    padding-top: 10px;
-   color: #17313E;
+   color: #000000;
  }
 
  .scrolling-images {
