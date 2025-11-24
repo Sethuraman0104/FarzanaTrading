@@ -20,6 +20,21 @@ document.getElementById('logo').addEventListener('click', () => {
   });
 });
 
+const header = document.querySelector(".site-header");
+const toggle = document.querySelector(".nav-toggle");
+const nav = document.querySelector(".main-nav");
+
+// Smooth scroll dynamic header
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 40) header.classList.add("scrolled");
+  else header.classList.remove("scrolled");
+});
+
+// Mobile nav toggle
+toggle.onclick = () => {
+  nav.classList.toggle("active");
+};
+
 // Get the button
 const scrollTopBtn = document.getElementById("scrollTopBtn");
 

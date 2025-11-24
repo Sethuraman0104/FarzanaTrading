@@ -500,29 +500,29 @@
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-emailjs.init('QX8-V1e_DKrE0W1cq'); // Your Public Key
+  <script>
+    emailjs.init('QX8-V1e_DKrE0W1cq'); // Your Public Key
 
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
 
-  const templateParams = {
-    name: document.getElementById('name').value,
-    email: document.getElementById('email').value,
-    message: document.getElementById('message').value,
-    time: new Date().toLocaleString()
-  };
+      const templateParams = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value,
+        time: new Date().toLocaleString()
+      };
 
-  emailjs.send('service_l23b05l', 'template_7rd4wjc', templateParams)
-    .then(function(response) {
-      alert('Message sent successfully!');
-      document.getElementById('contactForm').reset();
-    }, function(error) {
-      console.error('EmailJS Error:', error);
-      alert('Failed to send message. Please try again.');
+      emailjs.send('service_l23b05l', 'template_7rd4wjc', templateParams)
+        .then(function (response) {
+          alert('Message sent successfully!');
+          document.getElementById('contactForm').reset();
+        }, function (error) {
+          console.error('EmailJS Error:', error);
+          alert('Failed to send message. Please try again.');
+        });
     });
-});
-</script>
+  </script>
 
   <script src="js/script.js"></script>
 </body>
