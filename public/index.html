@@ -47,7 +47,7 @@
         </div>
 
         <a href="#white-wood-treatment" class="wire-node">🧴 White Wood Treatment</a>
-        <a href="#clients" class="wire-node">🤝 Our Clients</a>
+        <!-- <a href="#clients" class="wire-node" style="display: none;">🤝 Our Clients</a> -->
         <a href="#contact" class="wire-node">📍 Contact Us</a>
       </nav>
     </div>
@@ -183,9 +183,9 @@
           <div class="card-title" id="cables">⚡ Cables</div>
           <div class="slider-container scrap-slider">
             <div class="slides">
-              <img src="images/Cables.jfif" alt="Cable 1" class="modal-img">
-              <img src="images/Cables1.jfif" alt="Cable 2" class="modal-img">
-              <img src="images/Cables2.jfif" alt="Cable 3" class="modal-img">
+              <img src="images/cables.jfif" alt="Cable 1" class="modal-img">
+              <img src="images/cables1.jfif" alt="Cable 2" class="modal-img">
+              <img src="images/cables2.jfif" alt="Cable 3" class="modal-img">
               <img src="images/AluminumCables.jfif" alt="Cable 4" class="modal-img">
               <img src="images/AluminumCables3.jfif" alt="Cable 5" class="modal-img">
               <img src="images/AluminumCables2.jfif" alt="Cable 6" class="modal-img">
@@ -221,11 +221,11 @@
           <div class="slider-container scrap-slider">
             <div class="slides">
               <img src="images/pallets.jfif" alt="Wood Pallet 1" class="modal-img">
-              <img src="images/Pallets1.jfif" alt="Wood Pallet 2" class="modal-img">
-              <img src="images/Pallets2.jfif" alt="Wood Pallet 3" class="modal-img">
-              <img src="images/Pallets3.jfif" alt="Wood Pallet 4" class="modal-img">
-              <img src="images/Pallets4.jfif" alt="Wood Pallet 5" class="modal-img">
-              <img src="images/Pallets5.jfif" alt="Wood Pallet 6" class="modal-img">
+              <img src="images/pallets1.jfif" alt="Wood Pallet 2" class="modal-img">
+              <img src="images/pallets2.jfif" alt="Wood Pallet 3" class="modal-img">
+              <img src="images/pallets3.jfif" alt="Wood Pallet 4" class="modal-img">
+              <img src="images/pallets4.jfif" alt="Wood Pallet 5" class="modal-img">
+              <img src="images/pallets5.jfif" alt="Wood Pallet 6" class="modal-img">
             </div>
             <span class="prev scrap-prev">&#10094;</span>
             <span class="next scrap-next">&#10095;</span>
@@ -365,7 +365,7 @@
     </div>
   </section>
   <!-- Clients -->
-  <section id="clients" class="section" style="background: #f0f8ff;">
+  <section id="clients" class="section" style="background: #f0f8ff; display: none;">
     <div class="container slide-in">
       <div class="section-head" style="color:#0077b6;">🤝 Our Clients</div>
       <p class="section-sub" style="color:#555;">Trusted by leading industries across Bahrain.</p>
@@ -422,7 +422,7 @@
 
         <div class="contact-details">
           <h3>📞 Contact Details</h3>
-          <p><span class="icon">📧</span> info@farzanatrading.com</p>
+          <p><span class="icon">📧</span> info@farzanabh.com</p>
           <p><span class="icon">📱</span> 00973 6660 0052 <b>/</b> 00973 6666 0124</p>
         </div>
 
@@ -501,7 +501,7 @@
   </div>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
-    emailjs.init('QX8-V1e_DKrE0W1cq'); // Your Public Key
+    emailjs.init('umPx6A7rxbtgsMVSi'); // Your Public Key
 
     document.getElementById('contactForm').addEventListener('submit', function (e) {
       e.preventDefault();
@@ -513,7 +513,7 @@
         time: new Date().toLocaleString()
       };
 
-      emailjs.send('service_l23b05l', 'template_7rd4wjc', templateParams)
+      emailjs.send('service_myrfkmi', 'template_t42bsnt', templateParams)
         .then(function (response) {
           alert('Message sent successfully!');
           document.getElementById('contactForm').reset();
